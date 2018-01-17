@@ -14,9 +14,9 @@
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            @yield('section')
-        </div>
+      <div class="container">
+         @yield('section')
+      </div>
          <script src="{{ URL::to('js/app.js') }}"></script>
     </body>
 </html>
