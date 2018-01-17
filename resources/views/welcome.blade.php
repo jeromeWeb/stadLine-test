@@ -15,7 +15,7 @@
     </head>
     <body>
         Open Motton
-        <div class="container-fluid">
+        <div class="container">
             @yield('section')
         </div>
          <script src="{{ URL::to('js/app.js') }}"></script>
