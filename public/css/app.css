@@ -1560,11 +1560,6 @@ a:focus {
  * Basic typography style for copy text
  */
 
-body {
-  color: #636b6f;
-  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
 /**
  * Clear inner floats
  */
