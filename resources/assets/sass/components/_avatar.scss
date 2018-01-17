@@ -1,0 +1,13 @@
+.avatar {
+	background: #eeeeee;
+	img {
+		display: block;
+		width: 50px;
+		border-radius: 50%;
+		margin: auto;
+	}
+	p {
+		color: $text-color;
+		text-align: center;
+	}
+}

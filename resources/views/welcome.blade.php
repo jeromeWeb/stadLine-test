@@ -16,6 +16,17 @@
     <body>
       <div class="container">
          @yield('section')
+         <div class="row">
+            <div class="avatar col-xs-12">
+               @include('components/avatar')
+            </div>
+         </div>   
+
+         <div class="row">
+            <div class="bet col-xs-12">
+               @include('components/bet/input-bet')
+            </div>
+         </div>
       </div>
          <script src="{{ URL::to('js/app.js') }}"></script>
     </body>
