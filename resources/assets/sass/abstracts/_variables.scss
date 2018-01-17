@@ -2,13 +2,6 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-/// font size
-$size-h1: 38px;
-$size-h2: 28px;
-$size-h3: 21px;
-$size-p: 16px;
-$size-small: 12px;
-
 /// Main brand color
 /// @type Color
 $brand-color: #f18832;
@@ -68,8 +61,16 @@ $base-url: '/assets/' !default;
 
 
 // Typography
-$font-size-base: 14px;
-$line-height-base: 1.5;
+/// font size
+$size-h1: 38px;
+$size-h2: 28px;
+$size-h3: 21px;
+$size-p: 16px;
+$size-small: 12px;
+// font weight
+$fw-bold: 600;
+$fw-md: 500;
+$fw-reg: 400;
 $text-color: $dark-grey;
 
 // Navbar

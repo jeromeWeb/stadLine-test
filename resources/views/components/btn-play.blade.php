@@ -1,1 +1,1 @@
-<button class="btn-play" type="button" name="button">Play</button>
+<a class="btn-play h1">Play</a>

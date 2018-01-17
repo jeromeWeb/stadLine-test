@@ -1,7 +1,7 @@
 <aside class="sidebar">
-    @include('components.avatar')
 
     <nav>
+        @include('components.avatar')
         <ul>
             <li>
                 <a href="#">Historique</a>
@@ -11,4 +11,5 @@
             </li>
         </ul>
     </nav>
+    {{-- <span class="back-sidebar js-close-sidebar"></span> --}}
 </aside>

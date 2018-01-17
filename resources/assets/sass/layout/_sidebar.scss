@@ -1,3 +1,6 @@
+// Behavior of burger nav when click on checkbox burger
+// Also the home screen in background has a little scale effect
+
 $size-burger: 30px;
 
 // burger-nav refer to input
@@ -9,11 +12,13 @@ $size-burger: 30px;
         top: $gutter;
         left: $gutter;
         z-index: 15;
-
-        &, &:after {
-            width: $size-burger;
-            height: $size-burger;
-        }
+        background: $white;
+        cursor: pointer;
+        transition: background-color $anim-base;
+        border-radius: 50%;
+        width: $size-burger + 10px;
+        height: $size-burger + 10px;
+        background-color: transparent;
 
         &:after, &:before {
             display: block;
@@ -22,6 +27,8 @@ $size-burger: 30px;
         }
 
         &:after {
+            width: $size-burger;
+            height: $size-burger;
             border-top: 3px solid $brand-color;
             border-bottom: 3px solid $brand-color;
             max-height: $size-burger;
@@ -40,10 +47,19 @@ $size-burger: 30px;
 
     &:checked {
         ~ .sidebar {
-            transform: translate(0, 0);
+            transition: initial;
+
+            &:after {
+                opacity: 1;
+            }
+
+            &, nav {
+                transform: translate(0, 0);
+            }
         }
 
         + label {
+            background: $white;
             &:after {
                 overflow: hidden;
                 max-height: 3px;
@@ -55,19 +71,63 @@ $size-burger: 30px;
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
         }
+
+        ~ .wrap-home-scale {
+            transform: scale(.92);
+        }
     }
 }
 
 .sidebar {
-    width: 75%;
+    width: 100%;
     position: absolute;
     z-index: 10;
-    transition: transform $anim-base;
     top: 0;
     left: 0;
     transform: translate(-100%, 0);
-    background: violet;
+    background: transparent;
     min-height: 100%;
-    padding: $gutter;
-    padding-top: 50px;
+    transition: transform 0 ease-in;
+    transition-delay: .3s;
+
+    &:after, nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        right: 0;
+        z-index: 20;
+        background: rgba(0,0,0,.6);
+        opacity: 0;
+        transition: opacity $anim-base;
+    }
+
+    &, nav {
+        transform: translate(-100%, 0);
+    }
+
+    nav {
+        transition: transform $anim-base;
+        padding: $gutter;
+        width: 75%;
+        z-index: 30;
+        background: $brand-color;
+        padding-top: 100px;
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+.wrap-home-scale {
+    transition: transform $anim-base;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }

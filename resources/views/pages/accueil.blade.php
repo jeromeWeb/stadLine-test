@@ -11,9 +11,11 @@
 
 
     {{--  Content --}}
-    <h1 class="text-center">Le motton</h1>
+    <div class="wrap-home-scale">
+        <h1 class="text-center h2">Le Motton</h1>
 
-    <a href="#" class="btn-play">Jouer</a>
+        @include('components.btn-play')
+    </div>
 
 
 @endsection

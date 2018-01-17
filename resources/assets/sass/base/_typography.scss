@@ -6,15 +6,16 @@ body {
     font-size: $size-p;
 }
 
-h1 {
+h1, .h1 {
     font-size: $size-h1;
+    font-weight: $fw-bold;
 }
-h2 {
+h2, .h2 {
     font-size: $size-h2;
 }
-h3 {
+h3, .h3 {
     font-size: $size-h3;
 }
-small {
+small, .small {
     font-size: $size-small;
 }
