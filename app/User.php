@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Badge;
 
 class User extends Authenticatable
 {
@@ -35,5 +36,9 @@ class User extends Authenticatable
     // Retrouver les parties gagnées
     public function wonsGames() {
         return belongsToMany('App\Game', 'games_winners', 'user_id', 'game_id');
+    }
+  
+    public function badges(){
+      return $this->hasMany(Badge::class);
     }
 }
