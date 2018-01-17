@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Enums\Badges;
 
 class AddGamificationTables extends Migration
 {
@@ -19,8 +20,8 @@ class AddGamificationTables extends Migration
           $table->foreign('user_id')->references('id')->on('users')
             ->onDelete('cascade');
 
-          $table->enum('type', \App\Enums\Badges::getAllTypes());
-          $table->integer('step');
+          $table->enum('type', Badges::getAllTypes());
+          $table->integer('step')->default(0);
 
       });
     }
@@ -32,6 +33,6 @@ class AddGamificationTables extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('user_badges');
     }
 }

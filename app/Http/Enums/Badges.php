@@ -14,7 +14,7 @@ abstract class Badges
   const UP_007 = 'up_007';
   const NOSTRADAMUS = 'nostradamus';
 
-  function getAllTypes(){
+  public static function getAllTypes(){
     return [
       self::POINT_RECORD, self::PERFECT_WEEK, self::SERIAL_WINNER,
       self::SERIAL_SCORE, self::VICTORIES, self::DOWN_007,
