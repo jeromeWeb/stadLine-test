@@ -28,12 +28,12 @@
 // 5. Components
 @import
   'components/button',
-  'btn-play';
+  'components/btn-play';
 
 // 6. Page-specific styles
 @import
-  'pages/home';
-
+  'pages/home',
+  'pages/choose-players';
 // 7. Themes
 @import
   'themes/default';

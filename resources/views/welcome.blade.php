@@ -14,7 +14,9 @@
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
+
         <div class="container">
+            @include('components.btn-play')
             @yield('section')
         </div>
          <script src="{{ URL::to('js/app.js') }}"></script>

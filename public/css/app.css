@@ -1560,11 +1560,6 @@ a:focus {
  * Basic typography style for copy text
  */
 
-body {
-  color: #636b6f;
-  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
 /**
  * Clear inner floats
  */
@@ -1626,5 +1621,17 @@ body {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.btn-play {
+  height: 50px;
+  widows: 50px;
+  background-color: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
