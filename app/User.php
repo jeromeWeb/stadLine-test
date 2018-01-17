@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // Retrouver les statistiques de l'utilisateur
+    public function stats() {
+        return hasOne('App\UserStats');
+    }
+
+    // Retrouver les parties gagnées
+    public function wonsGames() {
+        return belongsToMany('App\Game', 'games_winners', 'user_id', 'game_id');
+    }
 }
