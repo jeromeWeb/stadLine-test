@@ -14,11 +14,13 @@ class BadgeRepository
       $notAquired = array_diff(Badges::getAllTypes(), $user_badges->pluck('type')->toArray());
       // dd($notAquired);
       foreach ($user_badges as $badge) {
-        $function = "condition_".$badge->type;
-        $newStep = $this->$function($user);
-        if($newStep > $badge->step){
-          $badge->step = $newStep;
-          $badge->save();
+        if ($badge->step < Badges::getMaxSteps($badge->type)) {
+          $function = "condition_".$badge->type;
+          $newStep = $this->$function($user);
+          if($newStep > $badge->step){
+            $badge->step = $newStep;
+            $badge->save();
+          }
         }
       }
       foreach ($notAquired as $badge_type) {
@@ -40,12 +42,30 @@ class BadgeRepository
         case 1:return 1;
         case 2:return 2;
         case 3:return 3;
-        case 4:return 4;
         default:return 0;
       }
     }
 
     private function condition_perfect_week($user){
       return $user->name == "Dodo"?1:0;
+    }
+
+    private function condition_serial_winner($user){
+
+    }
+    private function condition_serial_score($user){
+
+    }
+    private function condition_victories($user){
+
+    }
+    private function condition_down_007($user){
+
+    }
+    private function condition_up_007($user){
+
+    }
+    private function condition_nostradamus($user){
+
     }
 }

@@ -13,7 +13,6 @@ class BadgesController extends Controller
     public function __construct(BadgeRepository $badgeRepository)
     {
         $this->badgeRepository = $badgeRepository;
-        // $this->badgeRepository = new App\Repositories\BadgeRepository;
     }
 
     public function checkBadges(){
