@@ -16,14 +16,15 @@
     <body>
       <div class="container">
          @yield('section')
-         <div class="row">
-            <div class="avatar col-xs-12">
-               @include('components/avatar')
-            </div>
-         </div>   
 
          <div class="row">
-            <div class="bet col-xs-12">
+            <div class="bet">
+               @include('components/bet/input-betResult')
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="bet">
                @include('components/bet/input-bet')
             </div>
          </div>

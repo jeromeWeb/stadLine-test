@@ -1,13 +1,7 @@
 .avatar {
-	background: #eeeeee;
-	img {
-		display: block;
-		width: 50px;
-		border-radius: 50%;
-		margin: auto;
-	}
-	p {
-		color: $text-color;
-		text-align: center;
-	}
+	display: block;
+	width: 50px;
+	border-radius: 50%;
+	vertical-align: middle;
+	box-shadow: 0 3px 4px rgba(#808080, 0.2);
 }

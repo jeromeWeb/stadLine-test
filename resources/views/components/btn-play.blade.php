@@ -1,1 +1,1 @@
-<button type="button" name="button">Play</button>
+<button type="button" name="button">Predire</button>
