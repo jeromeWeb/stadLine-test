@@ -1,6 +1,8 @@
 @extends('welcome')
 
 
+@section('section')
+
     <h1>Styleguide</h1>
     <section>
         <h2>Logo</h2>
@@ -8,6 +10,14 @@
 
     <section>
         <h2>Fonts</h2>
+        <ul>
+            <li>h1</li>
+            <li>h2</li>
+            <li>h3</li>
+            <li>h4</li>
+            <li>p</li>
+            <li>small</li>
+        </ul>
     </section>
 
     <section>
@@ -16,7 +26,13 @@
         <ul>
             <li>Color 1 : <span></span></li>
             <li>Color 2 : <span></span></li>
-            <li>Color 3 : <span></span></li>
+        </ul>
+
+        <h3>UI</h3>
+        <ul>
+            <li>Success : <span></span></li>
+            <li>Warning : <span></span></li>
+            <li>Danger : <span></span></li>
         </ul>
 
         <h3>Gris</h3>
@@ -63,3 +79,4 @@
             <li></li>
         </ul>
     </section>
+@endsection

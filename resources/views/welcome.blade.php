@@ -35,7 +35,7 @@
 
 =======
         Open Motton
-        <div class="container-fluid">
+        <div class="container">
             @yield('section')
 >>>>>>> frontGeneral
         </div>
