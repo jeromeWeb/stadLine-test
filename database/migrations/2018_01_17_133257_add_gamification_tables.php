@@ -22,7 +22,7 @@ class AddGamificationTables extends Migration
 
           $table->enum('type', Badges::getAllTypes());
           $table->integer('step')->default(0);
-
+          $table->timestamps();
       });
     }
 

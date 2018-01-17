@@ -14,11 +14,17 @@ abstract class Badges
   const UP_007 = 'up_007';
   const NOSTRADAMUS = 'nostradamus';
 
+  // public static function getAllTypes(){
+  //   return [
+  //     self::POINT_RECORD, self::PERFECT_WEEK, self::SERIAL_WINNER,
+  //     self::SERIAL_SCORE, self::VICTORIES, self::DOWN_007,
+  //     self::UP_007, self::NOSTRADAMUS
+  //         ];
+  // }
+
   public static function getAllTypes(){
     return [
-      self::POINT_RECORD, self::PERFECT_WEEK, self::SERIAL_WINNER,
-      self::SERIAL_SCORE, self::VICTORIES, self::DOWN_007,
-      self::UP_007, self::NOSTRADAMUS
+      self::POINT_RECORD, self::PERFECT_WEEK
           ];
   }
 }
