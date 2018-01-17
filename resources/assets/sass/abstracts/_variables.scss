@@ -2,52 +2,33 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
-
-
-
-/// Regular font family
-/// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
-
-/// Code (monospace) font family
-/// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
-
-
-
-/// Copy text color
-/// @type Color
-$text-color: rgb(34, 34, 34) !default;
+/// font size
+$size-h1: 38px;
+$size-h2: 28px;
+$size-h3: 21px;
+$size-p: 16px;
+$size-small: 12px;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: #f18832;
 
-/// Light grey
-/// @type Color
-$light-grey: rgb(237, 237, 237) !default;
+/// greys
+$white: #fff;
+$light-grey: #C9C8C7;
+$mid-grey: #949391;
+$dark-grey: #292623;
 
-/// Medium grey
-/// @type Color
-$mid-grey: rgb(153, 153, 153) !default;
-
-/// Dark grey
-/// @type Color
-$dark-grey: rgb(68, 68, 68) !default;
-
-
-
-
+// UI
+$brand-success: #2cee78;
+$brand-warning: #eec72c;
+$brand-danger: #ee2c2c;
 
 /// Container's maximum width
-/// @type Length
 $max-width: 1180px !default;
 
-
-
+/// Layout
+$gutter: 15px;
 
 
 /// Breakpoints map
@@ -86,23 +67,10 @@ $base-url: '/assets/' !default;
 
 
 
-
-
-// Body
-$body-bg: #f5f8fa;
-
-
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
-
 // Typography
 $font-size-base: 14px;
 $line-height-base: 1.5;
-$text-color: #636b6f;
+$text-color: $dark-grey;
 
 // Navbar
 $navbar-default-bg: #fff;
@@ -110,10 +78,6 @@ $navbar-default-bg: #fff;
 // Buttons
 $btn-default-color: $text-color;
 
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
 
-// Panels
-$panel-default-heading-bg: #fff;
+// animation transition
+$anim-base: .2s ease-in;

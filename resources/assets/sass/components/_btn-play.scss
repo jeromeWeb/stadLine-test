@@ -1,0 +1,12 @@
+$btn-play-w: 200px;
+
+.btn-play {
+  height: $btn-play-w;
+  width: $btn-play-w;
+  text-align: center;
+  line-height: $btn-play-w;
+  background-color: $brand-color;
+  color: $white;
+  @include border-radius (50%);
+  @include center-abs;
+}

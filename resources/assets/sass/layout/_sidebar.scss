@@ -1,0 +1,73 @@
+$size-burger: 30px;
+
+// burger-nav refer to input
+.burger-nav {
+    display: none;
+
+    + label {
+        position: absolute;
+        top: $gutter;
+        left: $gutter;
+        z-index: 15;
+
+        &, &:after {
+            width: $size-burger;
+            height: $size-burger;
+        }
+
+        &:after, &:before {
+            display: block;
+            content: '';
+            @include center-abs()
+        }
+
+        &:after {
+            border-top: 3px solid $brand-color;
+            border-bottom: 3px solid $brand-color;
+            max-height: $size-burger;
+            transition-property: max-height, border-size, transform;
+            transition-duration: .2s;
+            transition-timing-function: ease-in;
+        }
+
+        &:before {
+            width: $size-burger;
+            height: 3px;
+            background: $brand-color;
+            transition: transform $anim-base;
+        }
+    }
+
+    &:checked {
+        ~ .sidebar {
+            transform: translate(0, 0);
+        }
+
+        + label {
+            &:after {
+                overflow: hidden;
+                max-height: 3px;
+                border-bottom: 0;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &:before {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}
+
+.sidebar {
+    width: 75%;
+    position: absolute;
+    z-index: 10;
+    transition: transform $anim-base;
+    top: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+    background: violet;
+    min-height: 100%;
+    padding: $gutter;
+    padding-top: 50px;
+}
