@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 //Historic
 Route::group(['prefix' => 'historic'], function () {
+  Route::get('/getPage','GamesController@getHistoricPage');
   Route::post('/load', 'GamesController@loadHistoric');
 });
 

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
+    public function getHistoricPage(Request $request){
+      $games = null;//Manque le reste pour faire la requête...
+      return view('Game.historic')->with('games', $games);
+    }
+
     public function loadHistoric(Request $request){
       $page = $request->get('page');
       $filter = $request->get('filter');
