@@ -14,6 +14,7 @@
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
+<<<<<<< HEAD
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -32,8 +33,12 @@
             </div>
 
 
+=======
+        Open Motton
+        <div class="container-fluid">
+            @yield('section')
+>>>>>>> frontGeneral
         </div>
-
          <script src="{{ URL::to('js/app.js') }}"></script>
     </body>
 </html>
