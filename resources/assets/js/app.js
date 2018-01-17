@@ -22,3 +22,4 @@
 // });
 
 require('./hello');
+require('historic.js');
