@@ -1,0 +1,7 @@
+.btn-play {
+  height:50px;
+  widows: 50px;
+  background-color: orange;
+  @include border-radius (50%);
+  @include center-abs;
+}
