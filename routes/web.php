@@ -15,4 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Historic
+Route::group(['prefix' => 'historic'], function () {
+  Route::post('/load', 'GamesController@loadHistoric');
+});
+
+//Temp
 Route::get('/badgeTest', 'BadgesController@getTestPage');
