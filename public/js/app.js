@@ -11049,9 +11049,33 @@ $(document).on('click', ".showResult", function () {
   $('.inputBet-js').slideUp(300);
 });
 
+
 $(document).on('click', ".showScore", function () {
   $('.score-js').slideToggle(300);
   $('.inputBetResult-js').slideUp(300);
+
+  $(document).on('click', ".fillResult", function () {
+    var results = {};
+    $('#result-inputs').children('.players').each(function () {
+      var input = $(this).find('input');
+      results[input.data('id')] = input.val();
+    });
+    $.ajax({
+      url: window.location.origin + '/game/nextTurn',
+      type: 'POST',
+      data: {
+        game_id: $('#playing-game').data('game-id'),
+        results: results
+      },
+      success: function success(response) {
+        $('#bet-field').html(response);
+        showGame();
+      }
+    });
+  });
+
+  $(document).on('click', ".showScore", function () {});
+
 });
 
 /***/ }),
@@ -11064,12 +11088,56 @@ $(document).on('click', ".showScore", function () {
 /* 8 */
 /***/ (function(module, exports) {
 
+
 var avatarBet = $('[data-stape="bet"] .players'),
     avatarResult = $('[data-stape="result"] .players'),
     avatarScore = $('[data-stape="score"] .players'),
     avatarScoreParty = $('[data-stape="scoreParty"] .players'),
     avatarDealer = $('.dealer-js');
 tabs = [avatarBet, avatarResult, avatarScore, avatarScoreParty];
+
+function nextTurn() {
+  var results = {};
+  $('#result-inputs').children('.players').each(function () {
+    var input = $(this).find('input');
+    results[input.data('id')] = input.val();
+  });
+  console.log(result);
+  $.ajax({
+    url: window.location.origin + '/game/nextTurn',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id'),
+      results: results
+    },
+    success: function success(response) {
+      $('#bet-field').html(response);
+      $('.inputBetResult-js').slideUp(300);
+      showGame();
+    }
+  });
+}
+
+function fillBet() {
+  var bets = {};
+  $('#bet-inputs').children('.players').each(function () {
+    var input = $(this).find('input');
+    bets[input.data('id')] = input.val();
+  });
+  $.ajax({
+    url: window.location.origin + '/game/fillBets',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id'),
+      bets: bets
+    },
+    success: function success(response) {
+      $('#result-field').html(response);
+      showResult();
+    }
+  });
+}
+
 
 for (tab in tabs) {
 	for (var i = 1; i <= tabs[tab].length; i++) {

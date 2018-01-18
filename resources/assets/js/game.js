@@ -29,7 +29,29 @@ $(document).on('click',".showResult",function(){
   fillBet();
 } )
 
-$(document).on('click',".showScore",function(){
+
+    $(document).on('click',".fillResult",function(){
+      var results = {};
+      $('#result-inputs').children('.players').each(function(){
+        var input = $(this).find('input');
+        results[input.data('id')]= input.val();
+      });
+      $.ajax({
+        url: window.location.origin + '/game/nextTurn',
+        type: 'POST',
+        data:{
+          game_id: $('#playing-game').data('game-id'),
+          results:results
+        },
+        success: function(response){
+          $('#bet-field').html(response);
+          showGame();
+        }
+      });
+    } )
+
+    $(document).on('click',".showScore",function(){
+
 
 })
 
@@ -61,6 +83,27 @@ function newTurn(){
     },
     success: function(response){
       $('#bet-field').html(response);
+      showGame();
+    }
+  });
+}
+
+function nextTurn(){
+  var results = {};
+  $('#result-inputs').children('.players').each(function(){
+    var input = $(this).find('input');
+    results[input.data('id')]= input.val();
+  });
+  $.ajax({
+    url: window.location.origin + '/game/nextTurn',
+    type: 'POST',
+    data:{
+      game_id: $('#playing-game').data('game-id'),
+      results:results
+    },
+    success: function(response){
+      $('#bet-field').html(response);
+      $('.inputBetResult-js').slideUp(300);
       showGame();
     }
   });
