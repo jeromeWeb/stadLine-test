@@ -1,6 +1,6 @@
 
 <header class="col-xs-12">
-	<h2 class="h2 fw-black ">Prédiction</h2>
+	<h2 class="h2 fw-black ">Prédictions</h2>
 	<p class="h3">1er Tour - 10 Cartes</p>
 </header>
 

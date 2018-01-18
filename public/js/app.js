@@ -68,9 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-
 module.exports = __webpack_require__(8);
-
 
 
 /***/ }),
@@ -99,12 +97,6 @@ module.exports = __webpack_require__(8);
 // const app = new Vue({
 //     el: '#app'
 // });
-
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
 
 // require('./hello');
 __webpack_require__(2);
@@ -11042,87 +11034,34 @@ backHome.on('click', function () {
     }, 300);
 });
 
-// Settings button
-$('.settings-js, .close-settings').on('click', function () {
-    $('.settings-panel').slideToggle(200, function () {
-        $(this).toggleClass('open');
-    });
-});
-
-// click outside settings and sidebar close open elements
-$(window).on("click", function (event) {
-    // Settings close
-    if ($('.settings-panel').hasClass('open') && $('.settings-panel').has(event.target).length == 0 && !$('.settings-panel').is(event.target)) {
-        $('.settings-panel').slideUp(200, function () {
-            $(this).removeClass('open');
-        });
-    }
-
-    // sidebar
-    // if (!$('#navBurger').prop('checked') && $('#navSide').has(event.target).length == 0 && !$('#navSide').is(event.target) ){
-    //         $('#navBurger').prop('checked', true);
-    // }
-});
-
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-// Gestion du tour, boutons suivant
-
-// $(document).on('click',".nextStepTour",function(){
-//   $('body').scrollTop(0)
-// } )
-
-$(document).on('click', ".showGame", function () {
-    $('.inputBet-js').slideDown(300);
-    $('.dealer-js').slideUp(300);
-});
-
-$(document).on('click', ".showResult", function () {
-    $('.inputBet-js').slideUp(300, function () {
-        $('body').scrollTop(0);
-        $('.inputBetResult-js').slideDown(300);
-    });
-});
-
-$(document).on('click', ".showScore", function () {
-    $('.inputBetResult-js').slideUp(300, function () {
-        $('body').scrollTop(0);
-        $('.score-js').slideDown(300);
-    });
+$(document).on('click', ".info-click-js", function () {
+  $('.info-dealer').toggle(300);
+  setTimeout(function () {
+    $('.info-dealer').hide(300);
+  }, 3500);
 });
 
 /***/ }),
 /* 7 */
-
 /***/ (function(module, exports) {
 
-$(function () {
+$(document).on('click', ".showGame", function () {
+  $('.inputBet-js').slideToggle(300);
+  $('.dealer-js').slideUp(300);
+});
 
-  $(document).on('click', '.js-start-game', function () {
-    var players = [];
-    $('#player-inputs').find('li').children('input').each(function () {
-      if ($(this).val() && $(this).val() != "") {
-        players.push($(this).val());
-      }
-    });
+$(document).on('click', ".showResult", function () {
+  $('.inputBetResult-js').slideToggle(300);
+  $('.inputBet-js').slideUp(300);
+});
 
-    if (players.length < 3) {
-      $('.error-players').html("Veuillez entrer au moins trois noms");
-    } else {
-      $.ajax({
-        url: window.location.origin + '/game/create',
-        type: 'POST',
-        data: {
-          players: JSON.stringify(players)
-        },
-        success: function success(response) {
-          $('#main-section').html(response);
-        }
-      });
-    }
-  });
+$(document).on('click', ".showScore", function () {
+  $('.score-js').slideToggle(300);
+  $('.inputBetResult-js').slideUp(300);
 });
 
 /***/ }),

@@ -22,3 +22,98 @@
         }
     }
 }
+
+.container-img {
+  width:40px;
+  height: auto;
+  position: absolute;
+  top: -3px;
+
+  @include media-min('break-sm') {
+      top: -3px;
+      left:50%;
+  };
+
+
+  img {
+    width:100%;
+    height:auto;
+  }
+}
+
+
+.form-group {
+
+  &.choose-players {
+
+    li {
+      position: relative;
+      margin: auto;
+      width:192px;
+
+      @include media-min('break-md') {
+        width:300px;
+      };
+
+      &:before ,&:first-of-type span{
+        content: '';
+        display: block;
+        background-image: url('/img/clover-cards.png');
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: -45px;
+        // transform: translate(-50%,0);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &:first-of-type:before {
+        display:none;
+        content: none;
+      }
+
+      &:first-of-type span {
+        cursor:pointer;
+        background-image: url('/img/clover-cards copy.png');
+      }
+    }
+
+  }
+
+}
+
+.info-dealer {
+  display: none;
+  font-size:$size-small;
+  position:absolute;
+  z-index: 11;
+  left: 50%;
+  top: 50%;
+  width: 90%;
+  transform:translate(-50%, -50%);
+  background: $white;
+  border-radius:3px;
+  height: 35px;
+  padding: 6px;
+  color:$brand-color;
+	box-shadow: 0 3px 4px rgba(#808080, 0.2);
+
+
+  &:before {
+    content: '';
+    display: block;
+    position:absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    left: -21px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 24px 8px 0;
+    border-color: transparent $white transparent transparent;
+  }
+
+}

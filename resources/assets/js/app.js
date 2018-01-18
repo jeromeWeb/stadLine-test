@@ -30,5 +30,6 @@ $.ajaxSetup({
 // require('./hello');
 require('./historic');
 require('./home');
+require('./choose-player');
 require('./start-tour');
 require('./game');
