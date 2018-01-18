@@ -1,0 +1,33 @@
+.form-group {
+    margin-bottom: 16px;
+    position: relative;
+
+    label{
+      display:none;
+    }
+
+    input {
+        border:none;
+        outline: none;
+        height: 40px !important;
+        padding: 6px;
+        font-size: $size-p;
+        font-weight: 400;
+        box-shadow: none;
+        border-radius: 8px;
+        border: 1px solid $light-grey;
+        margin-bottom:$gutter;
+
+        @include media-min('break-md') {
+          width:300px;
+          margin-bottom: 2*$gutter;
+        };
+
+        &:focus {
+            border: 1px solid $brand-color;
+            box-shadow: none;
+        }
+
+    }
+
+}

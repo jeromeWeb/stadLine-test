@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <title>@yield('title')</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,900" rel="stylesheet">
@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <div class="container nopadding">
+        <div id="main-section" class="container nopadding">
             @yield('section')
         </div>
 
@@ -26,7 +26,7 @@
             crossorigin="anonymous">
         </script>
         <script
-            src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js">
+            src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js">
         </script>
          <script src="{{ URL::to('js/app.js') }}"></script>
     </body>

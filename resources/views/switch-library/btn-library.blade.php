@@ -13,7 +13,7 @@
     @breakswitch
 
     @case('btn-secondaire-1')
-      <a href="{{route($lien)}}" class="btn btn-secondaire-1">{{$message}}</a>
+      <a @if(isset($lien))href="{{route($lien)}}"@endif class="btn btn-secondaire-1 {{isset($classJs)?$classJs:""}}">{{$message}}</a>
     @breakswitch
 
     @case('btn-secondaire-2')

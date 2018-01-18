@@ -15,14 +15,19 @@ Route::get('/', function () {
     return view('pages.accueil');
 });
 
-Route::get('/styleguide', function () {
-    return view('styleguide');
-});
 
 //Historic
 Route::group(['prefix' => 'historic'], function () {
   Route::get('/getPage','GamesController@getHistoricPage');
   Route::post('/load', 'GamesController@loadHistoric');
+});
+
+//Game
+Route::group(['prefix' => 'game'], function () {
+  Route::post('/create','GamesController@createGame');
+  Route::post('/newTurn','GamesController@beginTurn');
+  Route::post('/fillBets','GamesController@fillBet');
+  Route::post('/nextTurn','GamesController@nextTurn');
 });
 
 //Temp static pages

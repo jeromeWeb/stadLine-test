@@ -82,7 +82,7 @@ $size-burger: 30px;
 
 .sidebar {
     width: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     top: 0;
     left: 0;
@@ -123,6 +123,19 @@ $size-burger: 30px;
 
         a {
             color: $white;
+            display: block;
+            padding: 30px 0;
+            font-size: $size-h3;
+            font-weight: $fw-md;
+            position: relative;
+        }
+
+        li {
+            &:first-child {
+                a {
+                    border-bottom: 1px solid $white;
+                }
+            }
         }
     }
 }

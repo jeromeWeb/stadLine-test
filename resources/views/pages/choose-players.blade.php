@@ -2,25 +2,33 @@
    $j = 1;
 @endphp
 
-<h2 class="h3 moved">Veuillez indiquer les joueurs</h2>
+<h2 class="h3 moved">Veuillez saisir les pseudos</h2>
 
-<ul class="moved">
+<form class="form-group choose-players" action="" >
+
+  <ul class="moved text-center" id="player-inputs">
     @for ($i=0; $i < 5; $i++)
         <li>
+          @if ($i == 0)
+            <span class="info-click-js"></span>
+            <p class="info-dealer">Le premier joueur ditribue à la première partie!</p>
+          @endif
             @include('components.input-player',[$j => $j])
-        </li>
+          </li>
 
-        @php
-            $j++;
-        @endphp
-    @endfor
-</ul>
+          @php
+              $j++;
+          @endphp
+      @endfor
+  </ul>
+
+</form>
+
+<div class="error-players txt-ui-red"></div>
 
 
 <div class="padding-gutter text-center moved">
-  
-  @include('switch-library.btn-library', ['target'=>'btn-secondaire-1', 'message'=>'Démarrer', 'lien'=>'start-tour'])
+
+  @include('switch-library.btn-library', ['target' => 'btn-secondaire-1','message'=>'Démarrer', 'classJs' => 'js-start-game'])
 
 </div>
-
-
