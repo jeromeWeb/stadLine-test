@@ -95,7 +95,6 @@ function nextTurn(){
     var input = $(this).find('input');
     results[input.data('id')]= input.val();
   });
-  console.log(result);
   $.ajax({
     url: window.location.origin + '/game/nextTurn',
     type: 'POST',
