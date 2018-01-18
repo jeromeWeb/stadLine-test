@@ -4,7 +4,7 @@
 
 <h2 class="h3 moved">Veuillez indiquer les joueurs</h2>
 
-<ul class="moved">
+<ul class="moved" id="player-inputs">
     @for ($i=0; $i < 5; $i++)
         <li>
             @include('components.input-player',[$j => $j])
@@ -15,12 +15,11 @@
         @endphp
     @endfor
 </ul>
+<div class="error-players"></div>
 
 
 <div class="padding-gutter text-center moved">
-  
-  @include('switch-library.btn-library', ['target'=>'btn-secondaire-1', 'message'=>'Démarrer', 'lien'=>'start-tour'])
+
+  @include('switch-library.btn-library', ['target' => 'btn-secondaire-1','message'=>'Démarrer', 'classJs' => 'js-start-game'])
 
 </div>
-
-

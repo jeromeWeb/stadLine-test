@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(8);
 
 
 /***/ }),
@@ -98,14 +98,18 @@ module.exports = __webpack_require__(6);
 //     el: '#app'
 // });
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 // require('./hello');
 __webpack_require__(2);
-<<<<<<< HEAD
 __webpack_require__(3);
-=======
-__webpack_require__(4);
->>>>>>> frontGeneral
 __webpack_require__(5);
+__webpack_require__(6);
+__webpack_require__(7);
 
 /***/ }),
 /* 2 */
@@ -11056,7 +11060,38 @@ $(document).on('click', ".showScore", function () {
 });
 
 /***/ }),
-/* 6 */
+/* 7 */
+/***/ (function(module, exports) {
+
+$(function () {
+
+  $(document).on('click', '.js-start-game', function () {
+    var players = [];
+    $('#player-inputs').find('li').children('input').each(function () {
+      if ($(this).val() && $(this).val() != "") {
+        players.push($(this).val());
+      }
+    });
+
+    if (players.length < 3) {
+      $('.error-players').html("Veuillez entrer au moins trois noms");
+    } else {
+      $.ajax({
+        url: window.location.origin + '/game/create',
+        type: 'POST',
+        data: {
+          players: JSON.stringify(players)
+        },
+        success: function success(response) {
+          $('#player-inputs').html(response);
+        }
+      });
+    }
+  });
+});
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

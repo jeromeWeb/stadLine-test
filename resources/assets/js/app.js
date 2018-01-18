@@ -21,6 +21,12 @@
 //     el: '#app'
 // });
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 // require('./hello');
 require('./historic');
 require('./jquery-ui');
