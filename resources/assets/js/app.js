@@ -31,3 +31,4 @@ $.ajaxSetup({
 require('./historic');
 require('./home');
 require('./game');
+require('./choose-player');

@@ -1639,7 +1639,7 @@ small,
   font-size: 12px;
   position: absolute;
   z-index: 6;
-  left: 50%;
+  left: 42%;
   top: 50%;
   width: 90%;
   -webkit-transform: translate(-50%, -50%);
