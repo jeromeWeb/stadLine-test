@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rounds extends Model
+class Round extends Model
 {
 
 	public $table = 'rounds';
+	public $fillable = ['nb_card', 'nb_round', 'game_id'];
    	public $timestamps = false;
 
 	public function users(){
@@ -16,8 +17,10 @@ class Rounds extends Model
     }
 
 	public function game(){
-		
+
 		return $this->belongsTo(Game::class);
 	}
+
+	
 
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Player;
 use App\Round;
+use App\RoundUser;
 use DB;
 
 class Game extends Model
@@ -46,7 +47,7 @@ class Game extends Model
   }
 
   public function calculateNbCards(){
-    $count = getCurrentRound();
+    $count = $this->getCurrentRoundCount();
     return $count <= 10? 11 - $count : $count - 10;
   }
 
@@ -55,11 +56,25 @@ class Game extends Model
   }
 
   public function addRound(){
-    Round::create([
-      'game_id', $this->id,
-      'nb_round' => $this->getCurrentRound()->nb_round + 1,
-      'nb_card' => calculateNbCards()
-    ]);
+    if($this->getCurrentRoundCount() <= 20){
+      $round = $this->getCurrentRound();
+      return Round::create([
+        'game_id' => $this->id,
+        'nb_round' => $round?$round->nb_round + 1: 1,
+        'nb_card' => $this->calculateNbCards()
+      ]);
+    }else{
+      return false;
+    }
+  }
+
+  public function setPlayers($users){
+    foreach ($users as $user) {
+      RoundUser::create([
+        'round_id' => $this->getCurrentRound()->id,
+        'user_id' => $user->id
+      ]);
+    }
   }
 
 }

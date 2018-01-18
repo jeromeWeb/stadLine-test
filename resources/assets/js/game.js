@@ -22,4 +22,49 @@ $(function(){
         });
       }
     })
+
+    $(document).on('click',".showGame",function(){
+      newTurn();
+    })
+
+    $(document).on('click',".showResult",function(){
+
+    } )
+
+    $(document).on('click',".showScore",function(){
+
+    })
 })
+
+function showGame(){
+  $('.inputBet-js').slideDown(300);
+  $('.dealer-js').slideUp(300);
+}
+
+function showResult(){
+  $('.inputBet-js').slideUp(300, function() {
+      $('body').scrollTop(0)
+      $('.inputBetResult-js').slideDown(300);
+  })
+}
+
+function showScore(){
+  $('.inputBetResult-js').slideUp(300, function() {
+      $('body').scrollTop(0)
+      $('.score-js').slideDown(300);
+  })
+}
+
+function newTurn(){
+  $.ajax({
+    url: window.location.origin + '/game/newTurn',
+    type: 'POST',
+    data:{
+      game_id: $('#playing-game').data('game-id')
+    },
+    success: function(response){
+      $('#bet-field').html(response);
+      showGame();
+    }
+  });
+}

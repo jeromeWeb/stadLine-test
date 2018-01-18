@@ -68,9 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-
-module.exports = __webpack_require__(8);
-
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -111,7 +109,6 @@ __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(5);
 __webpack_require__(6);
-__webpack_require__(7);
 
 /***/ }),
 /* 2 */
@@ -11046,36 +11043,6 @@ backHome.on('click', function () {
 /* 6 */
 /***/ (function(module, exports) {
 
-// Gestion du tour, boutons suivant
-
-// $(document).on('click',".nextStepTour",function(){
-//   $('body').scrollTop(0)
-// } )
-
-$(document).on('click', ".showGame", function () {
-    $('.inputBet-js').slideDown(300);
-    $('.dealer-js').slideUp(300);
-});
-
-$(document).on('click', ".showResult", function () {
-    $('.inputBet-js').slideUp(300, function () {
-        $('body').scrollTop(0);
-        $('.inputBetResult-js').slideDown(300);
-    });
-});
-
-$(document).on('click', ".showScore", function () {
-    $('.inputBetResult-js').slideUp(300, function () {
-        $('body').scrollTop(0);
-        $('.score-js').slideDown(300);
-    });
-});
-
-/***/ }),
-/* 7 */
-
-/***/ (function(module, exports) {
-
 $(function () {
 
   $(document).on('click', '.js-start-game', function () {
@@ -11101,10 +11068,51 @@ $(function () {
       });
     }
   });
+
+  $(document).on('click', ".showGame", function () {
+    newTurn();
+  });
+
+  $(document).on('click', ".showResult", function () {});
+
+  $(document).on('click', ".showScore", function () {});
 });
 
+function showGame() {
+  $('.inputBet-js').slideDown(300);
+  $('.dealer-js').slideUp(300);
+}
+
+function showResult() {
+  $('.inputBet-js').slideUp(300, function () {
+    $('body').scrollTop(0);
+    $('.inputBetResult-js').slideDown(300);
+  });
+}
+
+function showScore() {
+  $('.inputBetResult-js').slideUp(300, function () {
+    $('body').scrollTop(0);
+    $('.score-js').slideDown(300);
+  });
+}
+
+function newTurn() {
+  $.ajax({
+    url: window.location.origin + '/game/newTurn',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id')
+    },
+    success: function success(response) {
+      $('#bet-field').html(response);
+      showGame();
+    }
+  });
+}
+
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

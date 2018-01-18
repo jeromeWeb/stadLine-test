@@ -48,16 +48,24 @@ class GamesController extends Controller
         $game->addPlayer($player);
       }
 
-      //$this->beginTurn($game);
       return view('pages.start-tour')
               ->with('game', $game);
     }
 
-    public function beginTurn($game){
-      $game->addRound();
+    public function beginTurn(Request $request){
+      $game = Game::find($request->get('game_id'));
+      $round = $game->addRound();
+      if ($round) {
+        $game->setPlayers($game->players->pluck('user'));
+        return view('components.bet.input-bet')
+                    ->with('game', $game)
+                    ->with('round', $round);
+      }else{
+        $this->loadScore($game);
+      }
     }
 
-    public function setPredictions($requests){
+    public function loadScore($game){
 
     }
 
