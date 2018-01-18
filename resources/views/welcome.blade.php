@@ -17,7 +17,8 @@
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="container nopadding">
+
+        <div id="main-section" class="container nopadding">
             @yield('section')
         </div>
 
@@ -28,7 +29,7 @@
             crossorigin="anonymous">
         </script>
         <script
-            src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js">
+            src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js">
         </script>
          <script src="{{ URL::to('js/app.js') }}"></script>
 

@@ -11104,20 +11104,7 @@ function loadHistoric(changed_type, changed_value) {
 /* 12 */
 /***/ (function(module, exports) {
 
-$(document).on('click', ".showGame", function () {
-  $('.inputBet-js').slideToggle(300);
-  $('.dealer-js').slideUp(300);
-});
-
-$(document).on('click', ".showResult", function () {
-  $('.inputBetResult-js').slideToggle(300);
-  $('.inputBet-js').slideUp(300);
-});
-
-$(document).on('click', ".showScore", function () {
-  $('.score-js').slideToggle(300);
-  $('.inputBetResult-js').slideUp(300);
-});
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'C:\\laragon\\www\\stadLine-test\\resources\\assets\\js\\start-tour.js'\n    at Error (native)");
 
 /***/ }),
 /* 13 */
@@ -11143,12 +11130,79 @@ $(function () {
           players: JSON.stringify(players)
         },
         success: function success(response) {
-          $('#player-inputs').html(response);
+          $('#main-section').html(response);
         }
       });
     }
   });
+
+  $(document).on('click', ".showGame", function () {
+    newTurn();
+  });
+
+  $(document).on('click', ".showResult", function () {
+    fillBet();
+  });
+
+  $(document).on('click', ".showScore", function () {});
 });
+
+function showGame() {
+  $('.inputBet-js').slideDown(300);
+  $('.dealer-js').slideUp(300);
+}
+
+function showResult() {
+  $('.inputBet-js').slideUp(300, function () {
+    $('body').scrollTop(0);
+    $('.inputBetResult-js').slideDown(300);
+  });
+}
+
+function showScore() {
+  $('.inputBetResult-js').slideUp(300, function () {
+    $('body').scrollTop(0);
+    $('.score-js').slideDown(300);
+  });
+}
+
+function newTurn() {
+  $.ajax({
+    url: window.location.origin + '/game/newTurn',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id')
+    },
+    success: function success(response) {
+      $('#bet-field').html(response);
+      showGame();
+    }
+  });
+}
+
+function fillBet() {
+  var bets = {};
+  $('#bet-inputs').children('.players').each(function () {
+    var input = $(this).find('input');
+    bets[input.data('id')] = input.val();
+  });
+  $.ajax({
+    url: window.location.origin + '/game/fillBets',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id'),
+      bets: bets
+    },
+    success: function success(response) {
+      $('#result-field').html(response);
+      showResult();
+    }
+  });
+}
+
+function nextTurn() {
+  showResult();
+}
 
 /***/ })
 /******/ ]);
