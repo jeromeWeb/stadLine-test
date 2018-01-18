@@ -8,6 +8,7 @@ class Round extends Model
 {
 
 	public $table = 'rounds';
+	public $fillable = ['nb_card', 'nb_round', 'game_id'];
    	public $timestamps = false;
 
 	public function users(){
@@ -16,8 +17,13 @@ class Round extends Model
     }
 
 	public function game(){
-		
-		return $this->belongsTo(Game::class);
-	}
 
+		return $this->belongsTo(Game::class);
+	}	
+
+
+		public function players()
+		{
+				return $this->hasMany(Player::class, 'round_id');
+		}
 }
