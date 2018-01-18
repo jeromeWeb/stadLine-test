@@ -29,11 +29,13 @@ class StatsController extends Controller
      */
 
     public function showStatsGames($user_id) {
-    	$stats = User::with(['rounds:id', 'game:id,time', 'statsDetails:id,user_stats_id,won,rising_points,points,won_bets', 'user_stats:id', 'user:pseudo']);
-    }
-
-    public function showStatsDetails($game_id) {
-    	$stats = UserStatsDetails::where('game_id', $game_id);
+    	$stats = User::with([
+    		'rounds:id',
+    		'game:id,created_at',
+    		'statsDetails:id,user_stats_id,won,rising_points,points,won_bets',
+    		'user_stats:id',
+    		'user:pseudo'
+    	])->get();
 
     	// ajouter la vue à renseigner
     	//return views('', ['stats' => $stats]); 

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 use Blade;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
              $value = preg_replace('/(?<=\s)@breakswitch(?=\s)/', '<?php break;', $value);
              return $value;
          });
+
+         Schema::defaultStringLength(191);
      }
 
     /**

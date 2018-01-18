@@ -38,7 +38,8 @@ class BadgeRepository
 
     //CONDITIONS
     private function condition_point_record($user){
-      switch (strlen($user->name)) {
+      $record = UserStats::where('user_id', $user->id)[0]->max_score;
+      switch ($user->)) {
         case 1:return 1;
         case 2:return 2;
         case 3:return 3;
