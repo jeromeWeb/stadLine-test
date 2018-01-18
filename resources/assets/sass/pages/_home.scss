@@ -1,16 +1,14 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-
-
-
 .wrap-home {
     background: $white;
     transition: opacity .3s .3s ease-in;
     overflow: hidden;
 
     .title {
-        margin-top: 100px;
+        margin-top: 20px;
+        margin-bottom: 10px;
         transform: translate(0, -40px);
         opacity: 0;
 
@@ -22,5 +20,22 @@
 
     &.hidden-page {
         opacity: 0;
+    }
+}
+
+.logo {
+    margin-top: 100px;
+    width: 100px;
+    height: auto;
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    padding: 5px;
+    transform: translate(0, -40px);
+    opacity: 0;
+
+    &.moved {
+        transform: translate(0, 0);
+        opacity: 1;
     }
 }
