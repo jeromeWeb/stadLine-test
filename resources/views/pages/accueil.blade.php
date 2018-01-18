@@ -1,5 +1,7 @@
 @extends('welcome')
 
+@section('title') Open Motton - StadLine @stop
+
 @section('section')
 
     {{-- burger icon  --}}

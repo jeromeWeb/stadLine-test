@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('pages.accueil');
 });
 
-Route::get('/styleguide', function () {
-    return view('styleguide');
-});
 
 //Historic
 Route::group(['prefix' => 'historic'], function () {

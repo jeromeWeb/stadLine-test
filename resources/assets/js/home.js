@@ -14,7 +14,7 @@ var $win = $(window),
 
 
 
-// Click on start button make the player chose screen appears
+// Click on start button make the player chose screen appears with transition on elements
 
 startBtn.on('click', function() {
     $this = $(this);
