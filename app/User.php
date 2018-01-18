@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Badge;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // Retrouver les statistiques de l'utilisateur
+    public function stats() {
+        return hasOne('App\UserStats');
+    }
+
+    // Retrouver les parties gagnées
+    public function wonsGames() {
+        return belongsToMany('App\Game', 'games_winners', 'user_id', 'game_id');
+    }
+  
+    public function badges(){
+      return $this->hasMany(Badge::class);
+    }
 }
