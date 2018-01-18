@@ -20,9 +20,13 @@ class CreateUsersStats extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->integer('won')->unsigned();
+            $table->integer('won_games')->unsigned();
+            $table->integer('total_games')->unsigned();
             $table->integer('total_points')->unsigned();
-            $table->integer('won_bet')->unsigned();
+            $table->integer('min_score')->unsigned();
+            $table->integer('max_score')->unsigned();
+            $table->integer('won_bets')->unsigned();
+            $table->integer('total_bets')->unsigned();
             $table->timestamps();
         });
     }
