@@ -25,3 +25,4 @@
 require('./historic.js');
 require('./jquery-ui');
 require('./home');
+require('./start-tour');

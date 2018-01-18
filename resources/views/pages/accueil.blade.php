@@ -12,8 +12,10 @@
 
     {{--  Content --}}
     <div class="wrap-home js-home">
-        <div class="wrap-scale">
-            <h1 class="text-center h2 title moved">Le Motton</h1>
+        <div class="wrap-scale text-center">
+            <img src="img/logo.png" alt="logo Stadline" class="logo moved">
+            <h1 class="title moved txt-brand">Le Motton</h1>
+            <h2 class="p txt-light-grey moved subtitle">Et si on commençait à jouer ?</h2>
 
             @include('components.btn-play')
         </div>
