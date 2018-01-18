@@ -19,10 +19,7 @@
     <body>
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
-                      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
-                            <input type="button" id="logout"  value="Logout" />
-                            <input id="image" type="image" src=""/>
         </div>
 
         <div class="container nopadding">
@@ -39,25 +36,26 @@
             src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js">
         </script>
          <script src="{{ URL::to('js/app.js') }}"></script>
-         @push('footer_js_variables')
-            var  isCo = false;
-         @endpush
 
          <script>
            // Get datas when google account login
            function onSignIn(googleUser) {
-           // Useful data for your client-side scripts:
-           var profile = googleUser.getBasicProfile();
-           console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-           console.log('Full Name: ' + profile.getName());
-           console.log('Given Name: ' + profile.getGivenName());
-           console.log('Family Name: ' + profile.getFamilyName());
-           console.log("Image URL: " + profile.getImageUrl());
-           console.log("Email: " + profile.getEmail());
-           $('#image').attr("src", profile.getImageUrl());
-           // The ID token you need to pass to your backend:
-           var id_token = googleUser.getAuthResponse().id_token;
-           console.log("ID Token: " + id_token);
+             $('#googleImage').remove();
+             $('.abcRioButtonIconImage').append('<input type="image" class="googleImage" id="googleImage" width="35" height="35">');
+             // Useful data for your client-side scripts:
+             var profile = googleUser.getBasicProfile();
+             // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+             // console.log('Full Name: ' + profile.getName());
+             // console.log('Given Name: ' + profile.getGivenName());
+             // console.log('Family Name: ' + profile.getFamilyName());
+             // console.log("Image URL: " + profile.getImageUrl());
+             // console.log("Email: " + profile.getEmail());
+             $('.abcRioButtonIconImage').addClass("abcRioButtonIconImageHide");
+             $('.abcRioButtonIcon').addClass("noPadding");
+             $('#googleImage').attr("src", profile.getImageUrl());
+             // The ID token you need to pass to your backend:
+             var id_token = googleUser.getAuthResponse().id_token;
+             // console.log("ID Token: " + id_token);
            }
          </script>
     </body>
