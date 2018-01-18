@@ -15,7 +15,7 @@ class Game extends Model
   public $timestamps = true;  
 
   public function statsDetails() {
-  	return $this->hasMany(UserStatsDetails::class)
+  	return $this->hasMany(UserStatsDetails::class);
   }
 
   public function rounds()
