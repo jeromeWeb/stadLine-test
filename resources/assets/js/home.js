@@ -65,3 +65,27 @@ backHome.on('click', function() {
         backHome.show();
     }, 300);
 })
+
+
+// Settings button
+$('.settings-js, .close-settings').on('click', function() {
+    $('.settings-panel').slideToggle(200, function() {
+        $(this).toggleClass('open')
+    });
+})
+
+
+// click outside settings and sidebar close open elements
+$(window).on("click", function(event){
+    // Settings close
+     if ($('.settings-panel').hasClass('open') && $('.settings-panel').has(event.target).length == 0 && !$('.settings-panel').is(event.target) ){
+         $('.settings-panel').slideUp(200, function() {
+             $(this).removeClass('open')
+         })
+     }
+
+     // sidebar
+     // if (!$('#navBurger').prop('checked') && $('#navSide').has(event.target).length == 0 && !$('#navSide').is(event.target) ){
+     //         $('#navBurger').prop('checked', true);
+     // }
+ });

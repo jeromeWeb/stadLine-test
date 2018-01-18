@@ -16,6 +16,9 @@
               <p class="info-dealer">Le premier joueur ditribue à la première partie!</p>
             @endif
 
+<ul class="moved" id="player-inputs">
+    @for ($i=0; $i < 5; $i++)
+        <li>
             @include('components.input-player',[$j => $j])
           </li>
 
@@ -27,10 +30,16 @@
 
 </form>
 
+        @php
+            $j++;
+        @endphp
+    @endfor
+</ul>
+<div class="error-players txt-ui-red"></div>
 
 
 <div class="padding-gutter text-center moved">
 
-  @include('switch-library.btn-library', ['target'=>'btn-secondaire-1', 'message'=>'Démarrer', 'lien'=>'start-tour'])
+  @include('switch-library.btn-library', ['target' => 'btn-secondaire-1','message'=>'Démarrer', 'classJs' => 'js-start-game'])
 
 </div>
