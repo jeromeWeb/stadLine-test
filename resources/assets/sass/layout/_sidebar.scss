@@ -7,11 +7,8 @@ $size-burger: 30px;
 .burger-nav {
     display: none;
 
-    &, + label {
-        transition: background $anim-base;
-    }
-
     + label {
+        transition: background $anim-base;
         position: absolute;
         top: $gutter;
         left: $gutter;
@@ -35,7 +32,7 @@ $size-burger: 30px;
             border-top: 3px solid $brand-color;
             border-bottom: 3px solid $brand-color;
             max-height: $size-burger;
-            transition-property: max-height, border-size, border-color, transform;
+            transition-property: max-height, border, transform;
             transition-duration: .2s;
             transition-timing-function: ease-in;
         }
@@ -44,7 +41,7 @@ $size-burger: 30px;
             width: $size-burger;
             height: 3px;
             background: $brand-color;
-            transition: transform $anim-base background $anim-base;
+            transition: transform $anim-base;
         }
     }
 
@@ -81,30 +78,6 @@ $size-burger: 30px;
             }
         }
     }
-
-    &.reverse {
-        background: $white;
-
-        + label {
-            background: $brand-color;
-
-            &:after {
-                border-top-color: $white;
-                border-bottom-color: $white;
-            }
-
-            &:before {
-                background: $white;
-            }
-        }
-
-        &:checked {
-            + label {
-                background: $brand-color;
-            }
-        }
-
-    }
 }
 
 .sidebar {
@@ -116,7 +89,7 @@ $size-burger: 30px;
     transform: translate(-100%, 0);
     background: transparent;
     min-height: 100%;
-    transition: transform 0 ease-in, background $anim-base;
+    transition: transform 0 ease-in;
     transition-delay: .3s;
 
     &:after, nav {
@@ -150,16 +123,6 @@ $size-burger: 30px;
 
         a {
             color: $white;
-        }
-    }
-
-    &.reverse {
-        nav {
-            background: $white;
-
-            a {
-                color: $brand-color;
-            }
         }
     }
 }

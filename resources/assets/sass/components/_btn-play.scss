@@ -1,13 +1,13 @@
 $btn-play-w: 250px;
 
 .btn-play {
-    height: $btn-play-w;
+    padding: $gutter;
     width: $btn-play-w;
     text-align: center;
     background-color: $brand-color;
     color: $white;
     z-index: 5;
-    @include border-radius (50%)
+    @include border-radius (50px)
     transform: translate(-50%, -50%) scale(1.0);
     @include center-abs;
 
@@ -20,10 +20,12 @@ $btn-play-w: 250px;
 
     span {
         transition: transform .4s ease-in, opacity .4s ease-in;
+        transform: translate(0, -40px);
+        opacity: 1;
 
         &.moved {
-            transform: translate(0, -40px);
-            opacity: 0;
+            transform: translate(0, 0);
+            opacity: 1;
         }
     }
 

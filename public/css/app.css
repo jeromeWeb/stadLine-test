@@ -1315,13 +1315,9 @@ small,
   display: none;
 }
 
-.burger-nav,
 .burger-nav + label {
   -webkit-transition: background 0.2s ease-in;
   transition: background 0.2s ease-in;
-}
-
-.burger-nav + label {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -1351,10 +1347,10 @@ small,
   border-top: 3px solid #f18832;
   border-bottom: 3px solid #f18832;
   max-height: 30px;
-  -webkit-transition-property: max-height, border-size, border-color, -webkit-transform;
-  transition-property: max-height, border-size, border-color, -webkit-transform;
-  transition-property: max-height, border-size, border-color, transform;
-  transition-property: max-height, border-size, border-color, transform, -webkit-transform;
+  -webkit-transition-property: max-height, border, -webkit-transform;
+  transition-property: max-height, border, -webkit-transform;
+  transition-property: max-height, border, transform;
+  transition-property: max-height, border, transform, -webkit-transform;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
   -webkit-transition-timing-function: ease-in;
@@ -1365,10 +1361,10 @@ small,
   width: 30px;
   height: 3px;
   background: #f18832;
-  -webkit-transition: -webkit-transform 0.2s ease-in background 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in background 0.2s ease-in;
-  transition: transform 0.2s ease-in background 0.2s ease-in;
-  transition: transform 0.2s ease-in background 0.2s ease-in, -webkit-transform 0.2s ease-in background 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 .burger-nav:checked ~ .sidebar {
@@ -1408,27 +1404,6 @@ small,
           transform: scale(0.92);
 }
 
-.burger-nav.reverse {
-  background: #fff;
-}
-
-.burger-nav.reverse + label {
-  background: #f18832;
-}
-
-.burger-nav.reverse + label:after {
-  border-top-color: #fff;
-  border-bottom-color: #fff;
-}
-
-.burger-nav.reverse + label:before {
-  background: #fff;
-}
-
-.burger-nav.reverse:checked + label {
-  background: #f18832;
-}
-
 .sidebar {
   width: 100%;
   position: absolute;
@@ -1439,10 +1414,10 @@ small,
           transform: translate(-100%, 0);
   background: transparent;
   min-height: 100%;
-  -webkit-transition: background 0.2s ease-in, -webkit-transform 0 ease-in;
-  transition: background 0.2s ease-in, -webkit-transform 0 ease-in;
-  transition: transform 0 ease-in, background 0.2s ease-in;
-  transition: transform 0 ease-in, background 0.2s ease-in, -webkit-transform 0 ease-in;
+  -webkit-transition: -webkit-transform 0 ease-in;
+  transition: -webkit-transform 0 ease-in;
+  transition: transform 0 ease-in;
+  transition: transform 0 ease-in, -webkit-transform 0 ease-in;
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
 }
@@ -1488,14 +1463,6 @@ small,
   color: #fff;
 }
 
-.sidebar.reverse nav {
-  background: #fff;
-}
-
-.sidebar.reverse nav a {
-  color: #f18832;
-}
-
 .wrap-home,
 .wrap-home .wrap-scale {
   position: absolute;
@@ -1513,8 +1480,6 @@ small,
 
 .wrap-chose-players {
   min-height: 100vh;
-  background: #f18832;
-  color: #fff;
   padding-top: 90px;
   display: none;
 }
@@ -1545,7 +1510,7 @@ small,
 }
 
 .back-home {
-  color: #fff;
+  color: #f18832;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -1559,13 +1524,13 @@ small,
 }
 
 .btn-play {
-  height: 250px;
+  padding: 15px;
   width: 250px;
   text-align: center;
   background-color: #f18832;
   color: #fff;
   z-index: 5;
-  border-radius: 50%;
+  border-radius: 50px;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   position: absolute;
@@ -1589,12 +1554,15 @@ small,
   transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
   transition: transform .4s ease-in, opacity .4s ease-in;
   transition: transform .4s ease-in, opacity .4s ease-in, -webkit-transform .4s ease-in;
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+  opacity: 1;
 }
 
 .btn-play span.moved {
-  -webkit-transform: translate(0, -40px);
-          transform: translate(0, -40px);
-  opacity: 0;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
 }
 
 .wrap-home {
@@ -1604,8 +1572,17 @@ small,
   overflow: hidden;
 }
 
-.wrap-home h1 {
+.wrap-home .title {
   margin-top: 100px;
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+  opacity: 0;
+}
+
+.wrap-home .title.moved {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
 }
 
 .wrap-home.hidden-page {

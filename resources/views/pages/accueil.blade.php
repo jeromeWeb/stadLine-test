@@ -13,7 +13,7 @@
     {{--  Content --}}
     <div class="wrap-home js-home">
         <div class="wrap-scale">
-            <h1 class="text-center h2">Le Motton</h1>
+            <h1 class="text-center h2 title moved">Le Motton</h1>
 
             @include('components.btn-play')
         </div>
