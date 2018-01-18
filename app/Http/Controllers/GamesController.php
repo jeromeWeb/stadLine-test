@@ -50,8 +50,6 @@ class GamesController extends Controller
         $game->addPlayer($player);
       }
 
-      shuffle($player_names);
-
       return view('pages.start-tour')
               ->with('dealer_array', $player_names)
               ->with('game', $game);
