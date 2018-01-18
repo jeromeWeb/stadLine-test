@@ -1,7 +1,33 @@
+
+$btn-play-w: 250px;
+
 .btn-play {
-  height:50px;
-  widows: 50px;
-  background-color: orange;
-  @include border-radius (50%);
-  @include center-abs;
+    height: $btn-play-w;
+    width: $btn-play-w;
+    text-align: center;
+    background-color: $brand-color;
+    color: $white;
+    z-index: 5;
+    @include border-radius (50%)
+    transform: translate(-50%, -50%) scale(1.0);
+    @include center-abs;
+
+
+    @include on-event {
+        color: $white;
+        text-decoration: none;
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+
+    span {
+        transition: transform .4s ease-in, opacity .4s ease-in;
+
+        &.moved {
+            transform: translate(0, -40px);
+            opacity: 0;
+        }
+    }
+
+
+
 }

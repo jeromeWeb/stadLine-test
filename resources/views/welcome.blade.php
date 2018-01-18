@@ -15,10 +15,19 @@
     </head>
     <body>
 
-        <div class="container">
-            @include('components.btn-play')
+        <div class="container nopadding">
             @yield('section')
         </div>
+
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+        </script>
+        <script
+            src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js">
+        </script>
          <script src="{{ URL::to('js/app.js') }}"></script>
     </body>
 </html>

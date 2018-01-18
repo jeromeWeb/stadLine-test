@@ -1,0 +1,179 @@
+// Behavior of burger nav when click on checkbox burger
+// Also the home screen in background has a little scale effect
+
+$size-burger: 30px;
+
+// burger-nav refer to input
+.burger-nav {
+    display: none;
+
+    &, + label {
+        transition: background $anim-base;
+    }
+
+    + label {
+        position: absolute;
+        top: $gutter;
+        left: $gutter;
+        z-index: 15;
+        background: $white;
+        cursor: pointer;
+        border-radius: 50%;
+        width: $size-burger + 10px;
+        height: $size-burger + 10px;
+        background-color: transparent;
+
+        &:after, &:before {
+            display: block;
+            content: '';
+            @include center-abs()
+        }
+
+        &:after {
+            width: $size-burger;
+            height: $size-burger;
+            border-top: 3px solid $brand-color;
+            border-bottom: 3px solid $brand-color;
+            max-height: $size-burger;
+            transition-property: max-height, border-size, border-color, transform;
+            transition-duration: .2s;
+            transition-timing-function: ease-in;
+        }
+
+        &:before {
+            width: $size-burger;
+            height: 3px;
+            background: $brand-color;
+            transition: transform $anim-base background $anim-base;
+        }
+    }
+
+    &:checked {
+        ~ .sidebar {
+            transition: initial;
+
+            &:after {
+                opacity: 1;
+            }
+
+            &, nav {
+                transform: translate(0, 0);
+            }
+        }
+
+        + label {
+            background: $white;
+            &:after {
+                overflow: hidden;
+                max-height: 3px;
+                border-bottom: 0;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &:before {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        ~ .wrap-home {
+            .wrap-scale {
+                transform: scale(.92);
+            }
+        }
+    }
+
+    &.reverse {
+        background: $white;
+
+        + label {
+            background: $brand-color;
+
+            &:after {
+                border-top-color: $white;
+                border-bottom-color: $white;
+            }
+
+            &:before {
+                background: $white;
+            }
+        }
+
+        &:checked {
+            + label {
+                background: $brand-color;
+            }
+        }
+
+    }
+}
+
+.sidebar {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+    background: transparent;
+    min-height: 100%;
+    transition: transform 0 ease-in, background $anim-base;
+    transition-delay: .3s;
+
+    &:after, nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        right: 0;
+        z-index: 20;
+        background: rgba(0,0,0,.6);
+        opacity: 0;
+        transition: opacity $anim-base;
+    }
+
+    &, nav {
+        transform: translate(-100%, 0);
+    }
+
+    nav {
+        transition: transform $anim-base;
+        padding: $gutter;
+        width: 75%;
+        z-index: 30;
+        background: $brand-color;
+        padding-top: 100px;
+
+        a {
+            color: $white;
+        }
+    }
+
+    &.reverse {
+        nav {
+            background: $white;
+
+            a {
+                color: $brand-color;
+            }
+        }
+    }
+}
+
+.wrap-home {
+
+    &, .wrap-scale {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $white;
+    }
+
+    .wrap-scale {
+        transition: transform $anim-base;
+    }
+}

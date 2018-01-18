@@ -1,25 +1,18 @@
-@extends('welcome')
-@section('meta_title')
-  {{ __('Choose-players') }}
-@endsection
-
-@section('section')
-
-<h2>Veuillez saisir les pseudos</h2>
-
 @php
-    $j = 1;
+   $j = 1;
 @endphp
 
-@for ($i=0; $i < 5; $i++)
-  <div class="container">
-      @include('components.input-player',[$j => $j])
-  </div>
-  @php
-      $j++;
-  @endphp
+<h2 class="h3 moved">Veuillez indiquer les joueurs</h2>
 
-@endfor
+<ul class="moved">
+    @for ($i=0; $i < 5; $i++)
+        <li>
+            @include('components.input-player',[$j => $j])
+        </li>
 
+        @php
+            $j++;
+        @endphp
+    @endfor
+</ul>
 
-@endsection
