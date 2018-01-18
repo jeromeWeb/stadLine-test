@@ -55,7 +55,7 @@ class GamesController extends Controller
     }
 
     public function setPredictions($requests){
-      
+
     }
 
 }
