@@ -1214,11 +1214,51 @@ h3,
   font-size: 21px;
 }
 
+p,
+.p {
+  font-size: 16px;
+}
+
 small,
 .small {
   font-size: 12px;
 }
 
+<<<<<<< HEAD
+=======
+.txt-brand {
+  color: #f18832;
+}
+
+.txt-light-grey {
+  color: #C9C8C7;
+}
+
+.txt-grey {
+  color: #949391;
+}
+
+.txt-dark-grey {
+  color: #292623;
+}
+
+.txt-ui-green {
+  color: #00ce51;
+}
+
+.txt-ui-red {
+  color: #ee2c2c;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+>>>>>>> frontGeneral
 /**
  * Clear inner floats
  */
@@ -1309,6 +1349,14 @@ small,
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
 }
 
 .burger-nav {
@@ -1485,7 +1533,8 @@ small,
 }
 
 .wrap-chose-players h2,
-.wrap-chose-players ul {
+.wrap-chose-players ul,
+.wrap-chose-players > div {
   -webkit-transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
   transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
   transition: transform .4s ease-in, opacity .4s ease-in;
@@ -1495,7 +1544,8 @@ small,
 }
 
 .wrap-chose-players h2.moved,
-.wrap-chose-players ul.moved {
+.wrap-chose-players ul.moved,
+.wrap-chose-players > div.moved {
   -webkit-transform: translate(0, 15px);
           transform: translate(0, 15px);
   opacity: 0;
@@ -1507,6 +1557,56 @@ small,
 
 .wrap-chose-players ul li {
   margin-bottom: 15px;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 25px;
+  font-size: 21px;
+  text-align: center;
+  width: 250px;
+  padding: 12px;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  text-decoration: none !important;
+}
+
+.center-buttons .btn:first-child {
+  margin-right: 20px;
+}
+
+.btn-principal-1 {
+  background-color: #f18832;
+  border: 1px solid #f18832;
+  color: #fff;
+  -webkit-transition: background 0.2s ease-in, color 0.2s ease-in;
+  transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.btn-principal-1:hover,
+.btn-principal-1:active,
+.btn-principal-1:focus {
+  background: #fff;
+  color: #f18832;
+}
+
+.btn-secondaire-1 {
+  background-color: #C9C8C7;
+  color: #fff;
+}
+
+.btn-secondaire-1:hover,
+.btn-secondaire-1:active,
+.btn-secondaire-1:focus {
+  background-color: #f18832;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+  color: #fff;
 }
 
 .back-home {
@@ -1538,6 +1638,7 @@ small,
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  top: 60%;
 }
 
 .btn-play:hover,
@@ -1574,28 +1675,9 @@ small,
           box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
 }
 
-body {
-  background: #d5cfcd;
-}
-
 .bet header,
 .bet section {
-  margin: 15px 0;
-}
-
-.bet header {
-  text-align: center;
-}
-
-.bet header h2 {
-  font-size: 22px;
-  color: #242320;
-  font-weight: lighter;
-}
-
-.bet header p {
-  font-size: 16px;
-  color: #ffffff;
+  margin: 30px 0 0;
 }
 
 .bet header h2,
@@ -1615,25 +1697,14 @@ body {
 .bet section .players {
   padding: 10px 15px;
   background: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 1px solid #efe3d8;
 }
 
 .bet section .players .avatar {
   margin: 0 20px 0 0;
 }
 
-.bet section .players label,
-.bet section .players input {
-  color: #292623;
+.bet section .players label {
+  display: block;
 }
 
 .bet section .players input {
@@ -1649,20 +1720,19 @@ body {
 }
 
 .bet section .players .bet-result {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid #efe3d8;
   border-radius: 3px;
+  color: #949391;
+}
+
+.bet section .players .bet-result label {
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .bet section .players .bet-result input {
   margin: 0;
-  border: none;
-}
-
-.bet section .players .bet-result input:first-of-type {
-  border-right: 1px solid #efe3d8;
+  width: 60px;
 }
 
 .bet section .players:first-child {
@@ -1671,6 +1741,7 @@ body {
 
 .bet .bet-btn {
   padding: 0;
+  margin-top: 30px;
 }
 
 .bet .bet-btn button {
@@ -1692,7 +1763,8 @@ body {
 }
 
 .wrap-home .title {
-  margin-top: 100px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   -webkit-transform: translate(0, -40px);
           transform: translate(0, -40px);
   opacity: 0;
@@ -1708,3 +1780,26 @@ body {
   opacity: 0;
 }
 
+<<<<<<< HEAD
+=======
+.logo {
+  margin-top: 100px;
+  width: 100px;
+  height: auto;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  padding: 5px;
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+  opacity: 0;
+}
+
+.logo.moved {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
+>>>>>>> frontGeneral

@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'pseudo', 'email', 'password', 'type'
     ];
 
     /**
@@ -44,9 +44,10 @@ class User extends Authenticatable
     // }
 
     // Retrouver les tours joués par l'utilisateur
-    public function rounds() {
-        return hasMany('App\Round');
-  
+    // public function rounds() {
+    //     return hasMany('App\Round');
+    // }
+
     public function badges(){
       return $this->hasMany(Badge::class);
     }
