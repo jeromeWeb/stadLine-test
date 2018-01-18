@@ -7,7 +7,6 @@
         <meta name="google-signin-scope" content="profile email">
         <meta name="google-signin-client_id" content="996656444072-6irn35okejaesihhtgoi8hnv1d30i8et.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <title>Laravel</title>
 
@@ -41,7 +40,7 @@
 
          <script src="{{ URL::to('js/app.js') }}"></script>
          @push('footer_js_variables')
-            var isConnect = isConnect();
+            var  isCo = gapi.auth2.getAuthInstance().isSignedIn.Ab
          @endpush
          <script>
 
