@@ -17,11 +17,6 @@
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-                <div class="top-right links">
-
-        </div>
-
         <div class="container nopadding">
             @yield('section')
         </div>

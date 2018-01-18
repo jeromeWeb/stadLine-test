@@ -11016,21 +11016,47 @@ backHome.on('click', function () {
 
 
 $("#logout").on("click", function () {
-  console.log(gapi.auth2.getAuthInstance().isSignedIn.Ab);
+  // console.log(gapi.auth2.getAuthInstance().isSignedIn.Ab);
   gapi.auth2.getAuthInstance().disconnect();
-  $('#image').attr("src", "");
+  $('.abcRioButtonIconImage').removeClass("abcRioButtonIconImageHide");
+  $('.abcRioButtonIcon').removeClass("noPadding");
+  $('#googleImage').remove();
 });
 
-console.log("plop");
-function isConnect() {
-  console.log(gapi.auth2.getAuthInstance().isSignedIn.Ab);
-  var isCo = gapi.auth2.getAuthInstance().isSignedIn.Ab;
+function getDivGoogleImg() {
+  setTimeout(function () {
+    console.log(2);
+    var div = $(".abcRioButtonContentWrapper").children()[0];
+    isConnect(div);
+  }, 500);
+}
+
+var isCo = false;
+
+function isConnect(div) {
+  console.log(2);
+  console.log($(div));
+  console.log($(div).hasClass("noPadding"));
+  if ($(div).hasClass("noPadding")) {
+    console.log(3);
+    isCo = true;
+  }
   return isCo;
 }
-console.log(gapi.load);
-console.log(gapi.auth2);
-console.log(isConnect());
-console.log(gapi.auth2.getAuthInstance().isSignedIn.Aia);
+
+console.log(isCo);
+
+function isLoggin() {
+  if (!getDivGoogleImg()) {
+    console.log(false);
+    $("#logout").addClass("hide");
+  } else {
+    console.log(true);
+    $("#logout").removeClass("hide");
+  }
+}
+
+isLoggin();
 
 /***/ }),
 /* 6 */

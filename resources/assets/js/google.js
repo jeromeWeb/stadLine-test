@@ -16,9 +16,10 @@ $("#logout").on("click", function(){
     }, 500);
   }
 
+  var isCo = false;
+
   function isConnect(div) {
       console.log(2);
-    var isCo = false;
     console.log($(div));
     console.log($(div).hasClass("noPadding"));
       if($(div).hasClass("noPadding")){
@@ -28,7 +29,7 @@ $("#logout").on("click", function(){
       return isCo;
 }
 
-console.log(getDivGoogleImg());
+console.log(isCo);
 
 function isLoggin(){
   if(!getDivGoogleImg()){
