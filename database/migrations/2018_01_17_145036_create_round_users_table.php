@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersStats extends Migration
+class CreateRoundUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,17 @@ class CreateUsersStats extends Migration
      */
     public function up()
     {
-        Schema::create('users_stats', function (Blueprint $table) {
+         Schema::create('round_users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('round_id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->integer('won_games')->unsigned();
-            $table->integer('total_games')->unsigned();
-            $table->integer('total_points')->unsigned();
-            $table->integer('min_score')->unsigned();
-            $table->integer('max_score')->unsigned();
-            $table->integer('won_bets')->unsigned();
-            $table->integer('total_bets')->unsigned();
-            $table->timestamps();
+            $table->integer('bet')->unsigned();
+            $table->integer('result')->unsigned();
+            $table->integer('point')->unsigned();
         });
     }
 
@@ -38,6 +34,6 @@ class CreateUsersStats extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_stats');
+        Schema::dropIfExists('round_users');
     }
 }

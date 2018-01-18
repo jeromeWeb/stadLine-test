@@ -12,7 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.accueil');
 });
+
+
+Route::get('/styleguide', function () {
+    return view('styleguide');
+});
+
+Route::get('/choose-players', function () {
+    return view('pages.choose-players');
+})->name('choose-players');
 
 Route::get('/badgeTest', 'BadgesController@getTestPage');
