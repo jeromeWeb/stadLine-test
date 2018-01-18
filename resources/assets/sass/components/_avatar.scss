@@ -1,7 +1,53 @@
 .avatar {
 	display: block;
 	width: 50px;
+	height: 50px;
 	border-radius: 50%;
 	vertical-align: middle;
 	box-shadow: 0 3px 4px rgba(#808080, 0.2);
+}
+
+.avatar1 {
+	background: url('/img/avatar1.png') no-repeat center;
+	background-size: cover;
+}
+.avatar2 {
+	background: url('/img/avatar2.png') no-repeat center;
+	background-size: cover;
+}
+.avatar3 {
+	background: url('/img/avatar3.png') no-repeat center;
+	background-size: cover;
+}
+.avatar4 {
+	background: url('/img/avatar4.png') no-repeat center;
+	background-size: cover;
+}
+.avatar5 {
+	background: url('/img/avatar5.png') no-repeat center;
+	background-size: cover;
+}
+
+.avatarXl {
+	@extend .avatar;
+	@extend .avatar1;
+	width: 150px;
+	height: 150px;
+	margin: auto;
+}
+
+.dealer-js {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	p {
+		margin: 30px 0;
+		color: $mid-grey;
+		span {
+			text-transform: capitalize;
+			color: $dark-grey;
+			line-height: 1.5;
+		}
+	}
 }

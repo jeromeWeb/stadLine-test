@@ -3,7 +3,7 @@
 </div>
 
 <div class="text-center">
-  <p>C'est à {{$dealer}} de distribuer !</p>
+  <p>C'est à <span> {{$dealer}} </span></br> de distribuer !</p>
 </div>
 
 <div class="padding-gutter text-center">
