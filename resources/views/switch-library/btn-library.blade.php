@@ -4,6 +4,10 @@
       <a class="btn btn-principal-1 {{$classJS}}">{{$message}}</a>
     @breakswitch
 
+     @case('btn-principal-1-slack')
+      <a class="btn btn-principal-1-slack {{$classJS}}">{{$message}}</a>
+    @breakswitch
+
     @case('btn-principal-2')
       <a class="btn btn-principal-2">{{$message}}</a>
     @breakswitch

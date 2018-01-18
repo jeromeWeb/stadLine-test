@@ -1,10 +1,5 @@
-@extends('welcome')
 
-@section('section')
 
-@section('meta_title')
-{{ __('Motton') }}
-@endsection
 
 <div class="dealer-js">
   @include('components.playerToBegin', ['dealer'=>'manu'])
@@ -34,4 +29,3 @@
     </div>
 </div>
 
-@endsection

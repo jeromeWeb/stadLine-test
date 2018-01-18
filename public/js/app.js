@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(9);
 
 
 /***/ }),
@@ -104,7 +104,7 @@ __webpack_require__(3);
 __webpack_require__(5);
 __webpack_require__(6);
 __webpack_require__(7);
-__webpack_require__(14);
+__webpack_require__(8);
 
 /***/ }),
 /* 2 */
@@ -11064,17 +11064,6 @@ $(document).on('click', ".showScore", function () {
 /* 8 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/***/ (function(module, exports) {
-
 var avatarBet = $('[data-stape="bet"] .players'),
     avatarResult = $('[data-stape="result"] .players'),
     avatarScore = $('[data-stape="score"] .players'),
@@ -11089,6 +11078,12 @@ for (tab in tabs) {
 }
 
 $('.dealer-js').find('.avatar').addClass('avatarXl').removeClass('avatar');
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

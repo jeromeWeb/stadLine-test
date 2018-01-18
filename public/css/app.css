@@ -1791,12 +1791,14 @@ small,
   border-radius: 3px 3px 0 0 !important;
 }
 
-.bet .bet-btn {
+.bet .bet-btn,
+.bet .btn-principal-1-slack {
   padding: 0;
   margin-top: 30px;
 }
 
-.bet .bet-btn button {
+.bet .bet-btn button,
+.bet .btn-principal-1-slack button {
   display: block;
   width: 100%;
   border-radius: 5px;
@@ -1805,6 +1807,25 @@ small,
   margin: 20px auto;
   background: #ff360b;
   color: #ffffff;
+}
+
+.bet .btn-principal-1-slack a {
+  color: #292623;
+  background: #ffffff !important;
+  border: 1px solid #292623;
+  padding: 10px;
+  position: relative;
+}
+
+.bet .btn-principal-1-slack a:after {
+  content: url("/img/slack.png");
+  display: block;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
 }
 
 .wrap-home {
