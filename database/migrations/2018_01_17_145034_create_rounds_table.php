@@ -15,8 +15,11 @@ class CreateRoundsTable extends Migration
     {
         Schema::create('rounds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('game_id')->unsigned();
-            $table->foreign('game_id')->references('id')->on('games')
+
+            $table->integer('game_id');
+            $table->foreign('game_id')
+                ->references('id')
+                ->on('games')
                 ->onDelete('cascade');
             $table->integer('nb_card')->unsigned();
             $table->integer('nb_round')->unsigned();

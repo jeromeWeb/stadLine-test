@@ -11,7 +11,11 @@ use DB;
 class Game extends Model
 {
   public $table = 'games';
-  public $timestamps = true;
+  public $timestamps = true;  
+
+  public function statsDetails() {
+  	return $this->hasMany(UserStatsDetails::class)
+  }
 
   public function rounds()
   {
@@ -61,5 +65,4 @@ class Game extends Model
       'nb_card' => calculateNbCards()
     ]);
   }
-
 }
