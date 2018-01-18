@@ -22,12 +22,14 @@
 			</div>
 			<div class="pull-left">
 				<label>Résultat</label>
-				<input required id="player{{$i}}" data-id={{$player->id}} type="number" name="Resultplayer">
+				<input class="pari" required id="player{{$i}}" data-id={{$player->id}} type="number" name="Resultplayer">
 			</div>
 		</div>
 	</div>
 	@php $i++; @endphp
 @endforeach
+
+<div id="error-beti" data-nbCarte={{$round->nb_card}}></div>
 <div class="bet-btn">
 	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Jouer', 'classJS'=>'showResult nextStepTour'])
 </div>

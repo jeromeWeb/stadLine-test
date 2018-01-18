@@ -16,11 +16,13 @@
 			<p class="txt-brand"><span class="fw-bold">0</span> point</p>
 		</div>
 		<div class="pull-right">
-			<input required id="player{{$i}}" data-id={{$player->id}} type="number" name="{{$player->pseudo}}" placeholder="pari">
+			<input class="pari" required id="player{{$i}}" data-id={{$player->id}} type="number" name="{{$player->pseudo}}" placeholder="pari">
 		</div>
 	</div>
 	@php $i++; @endphp
 @endforeach
+
+<div id="error-bet" data-nbCarte={{$round->nb_card}}></div>
 <div class="bet-btn">
 	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Jouer', 'classJS'=>'showResult nextStepTour'])
 </div>

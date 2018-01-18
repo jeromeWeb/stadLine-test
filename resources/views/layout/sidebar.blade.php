@@ -1,7 +1,8 @@
 <aside class="sidebar">
 
     <nav>
-        @include('components.avatar')
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+      <input type="btn button" class="logout" id="logout"  value="Logout" />
         <ul>
             <li>
                 <a href="#">Historique</a>

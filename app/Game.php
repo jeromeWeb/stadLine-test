@@ -12,10 +12,10 @@ use DB;
 class Game extends Model
 {
   public $table = 'games';
-  public $timestamps = true;  
+  public $timestamps = true;
 
   public function statsDetails() {
-  	return $this->hasMany(UserStatsDetails::class)
+  	return $this->hasMany(UserStatsDetails::class);
   }
 
   public function rounds()

@@ -28,7 +28,22 @@ $(function(){
     })
 
     $(document).on('click',".showResult",function(){
-      fillBet();
+      var valOk = false;
+      var nbCarte = 0;
+      $.each($('.pari'), function() {
+        if(($(this).val() <= 10 && $(this).val() >= 0 && $(this).val() != "")){
+          valOk = true;
+          nbCarte = nbCarte + $(this).val();
+        }else{
+          valOk = false;
+          $("#error-bet").html("Veuillez saisir un pari entre 0 et 10");
+          $("#error-beti").html("Veuillez saisir un pari entre 0 et 10");
+          return false;
+        }
+      });
+      if(valOk == true){
+        fillBet();
+      }
     } )
 
     $(document).on('click',".showScore",function(){

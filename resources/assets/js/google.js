@@ -1,5 +1,4 @@
 
-
 $("#logout").on("click", function(){
   // console.log(gapi.auth2.getAuthInstance().isSignedIn.Ab);
   gapi.auth2.getAuthInstance().disconnect();
@@ -8,35 +7,27 @@ $("#logout").on("click", function(){
   $('#googleImage').remove();
 });
 
-  function getDivGoogleImg(){
-    setTimeout(function() {
-      console.log(2);
-      var div = $(".abcRioButtonContentWrapper").children()[0];
-      isConnect(div);
-    }, 500);
-  }
-
-  var isCo = false;
-
-  function isConnect(div) {
-      console.log(2);
-    console.log($(div));
-    console.log($(div).hasClass("noPadding"));
-      if($(div).hasClass("noPadding")){
-        console.log(3);
-        isCo = true;
-      }
-      return isCo;
+function getDivGoogleImg(){
+  setTimeout(function() {
+    var div = $(".abcRioButtonContentWrapper").children()[0];
+    isConnect(div);
+  }, 500);
 }
 
-console.log(isCo);
+var isCo = false;
+
+function isConnect(div) {
+  if($(div).hasClass("noPadding")){
+    isCo = true;
+  }
+  return isCo;
+}
+
 
 function isLoggin(){
   if(!getDivGoogleImg()){
-    console.log(false);
     $("#logout").addClass("hide");
   }else{
-    console.log(true);
     $("#logout").removeClass("hide");
   }
 }
