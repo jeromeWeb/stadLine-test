@@ -12,14 +12,10 @@
 		display: inline-block;
 	}
 	section {
-		padding: 0;
+		padding: 0 0 60px;
 		.players {
 			padding: 10px 15px;
 			background: #ffffff;
-			// display: flex;
-			// justify-content: space-between;
-			// align-items: center;
-			// border-bottom: 1px solid #efe3d8;
 			.avatar {
 				margin: 0 20px 0 0;
 			}

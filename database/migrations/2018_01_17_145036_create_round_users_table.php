@@ -16,18 +16,14 @@ class CreateRoundUsersTable extends Migration
          Schema::create('round_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('round_id')->unsigned();
-            $table->foreign('round_id')
-                ->references('id')
-                ->on('rounds')
-                ->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->integer('bet')->unsigned();
-            $table->integer('result')->unsigned()->nullable();
-            $table->integer('point')->unsigned()->nullable();
+            $table->integer('bet')->unsigned()->default(0);
+            $table->integer('result')->unsigned()->default(0);
+            $table->integer('point')->unsigned()->default(0);
         });
     }
 
