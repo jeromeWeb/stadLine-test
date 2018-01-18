@@ -1,9 +1,15 @@
-<header class="col-xs-12">
-	<h2 class="h2 fw-black ">Resultat</h2>
-	<p class="h3">Fin du 1er Tour - 10 Cartes</p>
-</header>
+<div class="clearfix">
+	<header class="col-xs-12 col-sm-6 col-sm-push-3">
+		<h2 class="h2 fw-black ">Resultats</h2>
+		<p class="h3">Fin du 1er Tour - 10 Cartes</p>
+	</header>
+</div>
 
-<section class="col-xs-12 col-sm-6 col-sm-push-3">
+@php 
+	$j=1;
+@endphp
+
+<section data-stape="result" class="col-xs-12 col-sm-6 col-sm-push-3">
 @for ($i = 1; $i <= 5; $i++)
 	<div class="players clearfix">
 		{{-- <div class="bet-result">
@@ -11,7 +17,7 @@
 			<input required id="player{{$i}}" type="number" name="Resultplayer" value="0">
 		</div> --}}
 		<div class="pull-left">
-			@include('components/avatar')
+			@include('components/avatar', [$j => $j])
 		</div>
 		<div class="pull-left">
 			<label for="player{{$i}}">Pseudo{{$i}}</label>
@@ -28,6 +34,10 @@
 			</div>
 		</div>
 	</div>
+	@php 
+		$j++;
+	@endphp
+
 @endfor
 <div class="bet-btn">
 	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Voir les scores','classJS'=>'showScore'])

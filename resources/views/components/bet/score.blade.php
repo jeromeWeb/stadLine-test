@@ -1,10 +1,11 @@
+<div class="clearfix">
+	<header class="col-xs-12 col-sm-6 col-sm-push-3">
+		<h2 class="h2 fw-black ">Scores</h2>
+		<p class="h3">1er Tour - 10 Cartes</p>
+	</header>
+</div>
 
-<header class="col-xs-12">
-	<h2 class="h2 fw-black ">Scores</h2>
-	<p class="h3">1er Tour - 10 Cartes</p>
-</header>
-
-<section class="col-xs-12 col-sm-6 col-sm-push-3">
+<section data-stape="score" class="col-xs-12 col-sm-6 col-sm-push-3">
 @for ($i = 1; $i <= 5; $i++)
 	<div class="players clearfix">
 		<div class="pull-left">
@@ -24,7 +25,3 @@
 </div>
 
 </section>
-
-
-
-{{-- @include('components.bet.paveNumerique') --}}

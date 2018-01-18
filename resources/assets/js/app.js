@@ -27,3 +27,4 @@ require('./jquery-ui');
 require('./home');
 require('./start-tour');
 require('./game');
+require('./avatar');
