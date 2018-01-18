@@ -1186,11 +1186,16 @@ a {
 a:hover,
 a:active,
 a:focus {
+<<<<<<< HEAD
   color: #292623;
+=======
+  color: #484040;
+>>>>>>> openMottonGuillaumeFront
   text-decoration: underline;
 }
 
 /**
+<<<<<<< HEAD
  * Basic typography style for copy text
  */
 
@@ -1221,6 +1226,8 @@ small,
 
 
 /**
+=======
+>>>>>>> openMottonGuillaumeFront
  * Clear inner floats
  */
 
@@ -1286,6 +1293,7 @@ small,
   width: 1px;
 }
 
+<<<<<<< HEAD
 .hidden {
   display: none;
 }
@@ -1590,3 +1598,124 @@ small,
 .wrap-home.hidden-page {
   opacity: 0;
 }
+=======
+.avatar {
+  display: block;
+  width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
+          box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
+}
+
+body {
+  background: #d5cfcd;
+}
+
+.bet header,
+.bet section {
+  margin: 15px 0;
+}
+
+.bet header {
+  text-align: center;
+}
+
+.bet header h2 {
+  font-size: 22px;
+  color: #242320;
+  font-weight: lighter;
+}
+
+.bet header p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.bet header h2,
+.bet header p {
+  margin: 0;
+}
+
+.bet .avatar,
+.bet p {
+  display: inline-block;
+}
+
+.bet section {
+  padding: 0;
+}
+
+.bet section .players {
+  padding: 10px 15px;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #efe3d8;
+}
+
+.bet section .players .avatar {
+  margin: 0 20px 0 0;
+}
+
+.bet section .players label,
+.bet section .players input {
+  color: #484040;
+}
+
+.bet section .players input {
+  border: 1px solid #efe3d8;
+  font-family: "Work Sans", sans-serif;
+  border-radius: 3px;
+  width: 50px;
+  padding: 5px 10px;
+  margin: 0 0 0 20px;
+  text-align: center;
+  -moz-appearance: textfield;
+  color: #484040;
+}
+
+.bet section .players .bet-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #efe3d8;
+  border-radius: 3px;
+}
+
+.bet section .players .bet-result input {
+  margin: 0;
+  border: none;
+}
+
+.bet section .players .bet-result input:first-of-type {
+  border-right: 1px solid #efe3d8;
+}
+
+.bet section .players:first-child {
+  border-radius: 3px 3px 0 0 !important;
+}
+
+.bet .bet-btn {
+  padding: 0;
+}
+
+.bet .bet-btn button {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin: 20px auto;
+  background: #ff360b;
+  color: #ffffff;
+}
+
+>>>>>>> openMottonGuillaumeFront
