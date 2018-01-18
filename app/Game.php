@@ -48,7 +48,7 @@ class Game extends Model
 
   public function calculateNbCards(){
     $count = $this->getCurrentRoundCount();
-    return $count <= 10? $count + 1 : $count - 10;
+    return $count <= 10? $count + 10 : $count - 10;
   }
 
   public function calculateScore($nb_card, $score){
@@ -72,7 +72,8 @@ class Game extends Model
     foreach ($users as $user) {
       RoundUser::create([
         'round_id' => $this->getCurrentRound()->id,
-        'user_id' => $user->id
+        'user_id' => $user->id,
+        'game_id' => $this->id
       ]);
     }
   }

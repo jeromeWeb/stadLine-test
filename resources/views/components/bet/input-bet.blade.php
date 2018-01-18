@@ -13,7 +13,7 @@
 		</div>
 		<div class="pull-left">
 			<label for="player{{$i}}">{{$player->pseudo}}</label>
-			<p class="txt-brand"><span class="fw-bold">0</span> point</p>
+			<p class="txt-brand"><span class="fw-bold">{{$player->getScore($game)}}</span> point</p>
 		</div>
 		<div class="pull-right">
 			<input required id="player{{$i}}" data-id={{$player->id}} type="number" name="{{$player->pseudo}}" placeholder="pari">
