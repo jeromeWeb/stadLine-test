@@ -16,6 +16,11 @@
     @endfor
 </ul>
 
+<<<<<<< HEAD
 <div class="padding-gutter text-center">
   @include('switch-library.btn-library', ['target'=>'btn-secondaire-1', 'message'=>'Démarrer', 'lien'=>'start-tour'])
+=======
+<div class="padding-gutter text-center moved">
+  @include('switch-library.btn-library', ['target'=>'btn-secondaire-1', 'message'=>'Démarrer'])
+>>>>>>> frontGeneral
 </div>

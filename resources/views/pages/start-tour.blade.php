@@ -2,6 +2,7 @@
 
 @section('section')
 
+<<<<<<< HEAD
 
 @section('meta_title')
 {{ __('Motton') }}
@@ -24,9 +25,18 @@
 <div class="row hidden">
     <div class="bet">
        @include('components/bet/input-betResult')
+=======
+    <div class="bet clearfix">
+        @include('components/bet/input-bet')
+>>>>>>> frontGeneral
     </div>
- </div>
 
+<<<<<<< HEAD
 
+=======
+    <div class="bet clearfix">
+       @include('components/bet/input-betResult')
+    </div>
+>>>>>>> frontGeneral
 
 @endsection
