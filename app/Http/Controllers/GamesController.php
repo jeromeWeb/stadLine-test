@@ -82,12 +82,5 @@ class GamesController extends Controller
                   ->with('bets', $bets);
     }
 
-    public function endTurn(Request $request){
-
-    }
-
-    public function loadScore($game){
-
-    }
 
 }
