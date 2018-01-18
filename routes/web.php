@@ -21,3 +21,8 @@ Route::get('/styleguide', function () {
 });
 
 Route::get('/badgeTest', 'BadgesController@getTestPage');
+
+
+Route::get('/choose-players', function () {
+    return view('pages.choose-players');
+})->name('choose-players');

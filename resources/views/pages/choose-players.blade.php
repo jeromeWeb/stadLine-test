@@ -16,3 +16,6 @@
     @endfor
 </ul>
 
+<a class="btn-play h3 center-table" id="savePlayers">
+    <span class="center-cell moved">Démarrer</span>
+</a>

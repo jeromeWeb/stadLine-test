@@ -5,6 +5,7 @@ var $win = $(window),
     sideBar = $('.sidebar'),
     startBtn = $('#startGame'),
     backHome = $('#backHome'),
+    savePlayers = $('#savePlayers'),
     w = $win.width(),
     h = $win.height();
     diag = w*w + h*h;
@@ -59,3 +60,20 @@ backHome.on('click', function() {
         backHome.show();
     }, 300);
 })
+
+savePlayers.on('click', function() {
+    var noms = new Array();
+    $('.playerName').text(function(name) {
+        noms.push(name);
+    });
+    $.ajax({
+    type:'post',
+    url:'/addPlayers',
+    data: {
+      'savePlayers': noms
+    },
+    success(function() {
+        // passer à la page suivante
+    }
+  });
+});
