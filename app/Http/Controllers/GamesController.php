@@ -59,7 +59,7 @@ class GamesController extends Controller
     }
 
     public function dataEndGame(Request $request){
-      $game = $request->get('game');
+      $game = Game::find($request->get('game_id'));
       $rounds = $game->rounds();
       $i = 1 ;
       $data_array = [
