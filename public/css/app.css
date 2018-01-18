@@ -1201,7 +1201,7 @@ body {
 h1,
 .h1 {
   font-size: 38px;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 h2,
@@ -1315,13 +1315,9 @@ small,
   display: none;
 }
 
-.burger-nav,
 .burger-nav + label {
   -webkit-transition: background 0.2s ease-in;
   transition: background 0.2s ease-in;
-}
-
-.burger-nav + label {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -1351,10 +1347,10 @@ small,
   border-top: 3px solid #f18832;
   border-bottom: 3px solid #f18832;
   max-height: 30px;
-  -webkit-transition-property: max-height, border-size, border-color, -webkit-transform;
-  transition-property: max-height, border-size, border-color, -webkit-transform;
-  transition-property: max-height, border-size, border-color, transform;
-  transition-property: max-height, border-size, border-color, transform, -webkit-transform;
+  -webkit-transition-property: max-height, border, -webkit-transform;
+  transition-property: max-height, border, -webkit-transform;
+  transition-property: max-height, border, transform;
+  transition-property: max-height, border, transform, -webkit-transform;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
   -webkit-transition-timing-function: ease-in;
@@ -1365,10 +1361,10 @@ small,
   width: 30px;
   height: 3px;
   background: #f18832;
-  -webkit-transition: -webkit-transform 0.2s ease-in background 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in background 0.2s ease-in;
-  transition: transform 0.2s ease-in background 0.2s ease-in;
-  transition: transform 0.2s ease-in background 0.2s ease-in, -webkit-transform 0.2s ease-in background 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 .burger-nav:checked ~ .sidebar {
@@ -1408,27 +1404,6 @@ small,
           transform: scale(0.92);
 }
 
-.burger-nav.reverse {
-  background: #fff;
-}
-
-.burger-nav.reverse + label {
-  background: #f18832;
-}
-
-.burger-nav.reverse + label:after {
-  border-top-color: #fff;
-  border-bottom-color: #fff;
-}
-
-.burger-nav.reverse + label:before {
-  background: #fff;
-}
-
-.burger-nav.reverse:checked + label {
-  background: #f18832;
-}
-
 .sidebar {
   width: 100%;
   position: absolute;
@@ -1439,10 +1414,10 @@ small,
           transform: translate(-100%, 0);
   background: transparent;
   min-height: 100%;
-  -webkit-transition: background 0.2s ease-in, -webkit-transform 0 ease-in;
-  transition: background 0.2s ease-in, -webkit-transform 0 ease-in;
-  transition: transform 0 ease-in, background 0.2s ease-in;
-  transition: transform 0 ease-in, background 0.2s ease-in, -webkit-transform 0 ease-in;
+  -webkit-transition: -webkit-transform 0 ease-in;
+  transition: -webkit-transform 0 ease-in;
+  transition: transform 0 ease-in;
+  transition: transform 0 ease-in, -webkit-transform 0 ease-in;
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
 }
@@ -1488,14 +1463,6 @@ small,
   color: #fff;
 }
 
-.sidebar.reverse nav {
-  background: #fff;
-}
-
-.sidebar.reverse nav a {
-  color: #f18832;
-}
-
 .wrap-home,
 .wrap-home .wrap-scale {
   position: absolute;
@@ -1513,8 +1480,6 @@ small,
 
 .wrap-chose-players {
   min-height: 100vh;
-  background: #f18832;
-  color: #fff;
   padding-top: 90px;
   display: none;
 }
@@ -1545,7 +1510,7 @@ small,
 }
 
 .back-home {
-  color: #fff;
+  color: #f18832;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -1559,6 +1524,7 @@ small,
 }
 
 .btn {
+  display: block;
   border: 0;
   border-radius: 25px;
   font-size: 21px;
@@ -1589,13 +1555,13 @@ small,
 }
 
 .btn-play {
-  height: 250px;
+  padding: 15px;
   width: 250px;
   text-align: center;
   background-color: #f18832;
   color: #fff;
   z-index: 5;
-  border-radius: 50%;
+  border-radius: 50px;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   position: absolute;
@@ -1619,12 +1585,134 @@ small,
   transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
   transition: transform .4s ease-in, opacity .4s ease-in;
   transition: transform .4s ease-in, opacity .4s ease-in, -webkit-transform .4s ease-in;
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+  opacity: 1;
 }
 
 .btn-play span.moved {
-  -webkit-transform: translate(0, -40px);
-          transform: translate(0, -40px);
-  opacity: 0;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
+.avatar {
+  display: block;
+  width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
+          box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
+}
+
+body {
+  background: #d5cfcd;
+}
+
+.bet header,
+.bet section {
+  margin: 15px 0;
+}
+
+.bet header {
+  text-align: center;
+}
+
+.bet header h2 {
+  font-size: 22px;
+  color: #242320;
+  font-weight: lighter;
+}
+
+.bet header p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.bet header h2,
+.bet header p {
+  margin: 0;
+}
+
+.bet .avatar,
+.bet p {
+  display: inline-block;
+}
+
+.bet section {
+  padding: 0;
+}
+
+.bet section .players {
+  padding: 10px 15px;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #efe3d8;
+}
+
+.bet section .players .avatar {
+  margin: 0 20px 0 0;
+}
+
+.bet section .players label,
+.bet section .players input {
+  color: #292623;
+}
+
+.bet section .players input {
+  border: 1px solid #efe3d8;
+  font-family: "Work Sans", sans-serif;
+  border-radius: 3px;
+  width: 50px;
+  padding: 5px 10px;
+  margin: 0 0 0 20px;
+  text-align: center;
+  -moz-appearance: textfield;
+  color: #292623;
+}
+
+.bet section .players .bet-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #efe3d8;
+  border-radius: 3px;
+}
+
+.bet section .players .bet-result input {
+  margin: 0;
+  border: none;
+}
+
+.bet section .players .bet-result input:first-of-type {
+  border-right: 1px solid #efe3d8;
+}
+
+.bet section .players:first-child {
+  border-radius: 3px 3px 0 0 !important;
+}
+
+.bet .bet-btn {
+  padding: 0;
+}
+
+.bet .bet-btn button {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin: 20px auto;
+  background: #ff360b;
+  color: #ffffff;
 }
 
 .wrap-home {
@@ -1634,8 +1722,17 @@ small,
   overflow: hidden;
 }
 
-.wrap-home h1 {
+.wrap-home .title {
   margin-top: 100px;
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+  opacity: 0;
+}
+
+.wrap-home .title.moved {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
 }
 
 .wrap-home.hidden-page {
