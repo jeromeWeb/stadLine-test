@@ -26,6 +26,7 @@ class CreateUsersStatsDetails extends Migration
                 ->on('users_stats')
                 ->onDelete('cascade');
             $table->boolean('won');
+            $table->integer('rising_points');
             $table->integer('points')->unsigned();
             $table->integer('won_bets')->unsigned();
             $table->timestamps();

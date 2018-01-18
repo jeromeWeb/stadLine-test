@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Game;
 use App\User;
+use App\RoundUser;
+use App\Round;
 
 class GamesController extends Controller
 {
@@ -48,17 +50,37 @@ class GamesController extends Controller
         $game->addPlayer($player);
       }
 
-      //$this->beginTurn($game);
       return view('pages.start-tour')
               ->with('game', $game);
     }
 
-    public function beginTurn($game){
-      $game->addRound();
+    public function beginTurn(Request $request){
+      $game = Game::find($request->get('game_id'));
+      $round = $game->addRound();
+      if ($round) {
+        $game->setPlayers($game->players->pluck('user'));
+        return view('components.bet.input-bet')
+                    ->with('game', $game)
+                    ->with('round', $round);
+      }else{
+        $this->loadScore($game);
+      }
     }
 
-    public function setPredictions($requests){
-
+    public function fillBet(Request $request){
+      $game = Game::find($request->get('game_id'));
+      $round = $game->getCurrentRound();
+      $bets = $request->get('bets');
+      foreach ($bets as $user_id => $value) {
+        $round_user = RoundUser::where('round_id', $round->id)->where('user_id', $user_id)->first();
+        $round_user->bet = $value;
+        $round_user->save();
+      }
+      return view('components.bet.input-betResult')
+                  ->with('game', $game)
+                  ->with('round', $round)
+                  ->with('bets', $bets);
     }
+
 
 }

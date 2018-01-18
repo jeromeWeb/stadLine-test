@@ -19,4 +19,8 @@ class UserStatsDetails extends Model
     public function userStats() {
     	return belongsTo('App\UserStats');
     }
+
+    public function game() {
+    	return belongsTo('App\Game');
+    }
 }
