@@ -36,4 +36,9 @@ class User extends Authenticatable
     public function wonsGames() {
         return belongsToMany('App\Game', 'games_winners', 'user_id', 'game_id');
     }
+
+    // Retrouver les tours joués par l'utilisateur
+    public function rounds() {
+        return hasMany('App\Round');
+    }
 }
