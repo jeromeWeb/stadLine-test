@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('pages.accueil');
 });
 
+
 Route::get('/styleguide', function () {
     return view('styleguide');
 });
@@ -22,3 +23,5 @@ Route::get('/styleguide', function () {
 Route::get('/choose-players', function () {
     return view('pages.choose-players');
 })->name('choose-players');
+
+Route::get('/badgeTest', 'BadgesController@getTestPage');
