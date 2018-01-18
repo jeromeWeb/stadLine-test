@@ -1619,6 +1619,11 @@ small,
   background-repeat: no-repeat;
 }
 
+.form-group.choose-players li:before {
+  height: 35px;
+  width: 35px;
+}
+
 .form-group.choose-players li:first-of-type:before {
   display: none;
   content: none;

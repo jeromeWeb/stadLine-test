@@ -65,9 +65,13 @@
         z-index: 5;
         top: 0;
         left: -45px;
-        // transform: translate(-50%,0);
         background-size: contain;
         background-repeat: no-repeat;
+      }
+
+      &:before {
+        height: 35px;
+        width: 35px;
       }
 
       &:first-of-type:before {
