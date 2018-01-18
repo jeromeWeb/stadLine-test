@@ -1788,10 +1788,6 @@ small,
           box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
 }
 
-<<<<<<< HEAD
-.form-group {
-  margin-bottom: 16px;
-=======
 .avatar1,
 .avatarXl {
   background: url("/img/avatar1.png") no-repeat center;
@@ -1843,36 +1839,8 @@ small,
   line-height: 1.5;
 }
 
-.settings-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 10;
-  width: 25px;
-}
-
-.settings-btn img {
-  width: 100%;
-  height: auto;
-}
-
-.settings-panel {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 30;
-  padding: 5px;
-  width: 100%;
-  max-width: 400px;
-}
-
-.settings-panel ul {
-  margin-top: 10px;
-}
-
-.settings-panel ul li {
->>>>>>> 40773d5ddd94b017165ef5e7ace17f39fa0f2d07
+.form-group {
+  margin-bottom: 16px;
   position: relative;
 }
 
