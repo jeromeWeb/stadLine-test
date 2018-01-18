@@ -11,10 +11,10 @@ $btn-play-w: 250px;
     font-weight: $fw-bold;
     font-size: $size-h2;
     z-index: 5;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    @include shadow()
     @include border-radius (50px)
     @include center-abs;
-    top: 60%;
+    // top: 60%;
 
 
     @include on-event {

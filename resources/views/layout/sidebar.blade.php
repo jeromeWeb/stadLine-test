@@ -1,6 +1,6 @@
 <aside class="sidebar">
 
-    <nav>
+    <nav id="navSide">
       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
       <input type="btn button" class="logout" id="logout"  value="Logout" />
         <ul>

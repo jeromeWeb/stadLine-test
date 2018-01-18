@@ -78,4 +78,23 @@
 			color: #ffffff;
 		}
 	}
+	.btn-principal-1-slack {
+		@extend .bet-btn;
+		a {
+			color: $text-color;
+			background: #ffffff!important;
+			border: 1px solid $text-color;
+			padding: 10px;
+			position: relative;
+			&:after {
+				content: url('/img/slack.png');
+				display: block;
+				width: 50px;
+				position: absolute;
+				top: 50%;
+				transform:translateY(-50%);
+				left: 0;
+			};
+		}
+	}
 }

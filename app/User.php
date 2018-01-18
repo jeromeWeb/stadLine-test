@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Badge;
+use App\Game;
 
 class User extends Authenticatable
 {
@@ -47,6 +48,15 @@ class User extends Authenticatable
     // public function rounds() {
     //     return hasMany('App\Round');
     // }
+
+    public function getScore($game){
+      $points = 0;
+      $rounds = RoundUser::where('game_id', $game->id)->where('user_id', $this->id)->get();
+      foreach ($rounds as $round) {
+        $points += $round->point;
+      }
+      return $points;
+    }
 
     public function badges(){
       return $this->hasMany(Badge::class);

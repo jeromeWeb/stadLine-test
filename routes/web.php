@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('pages.accueil');
 });
 
-Route::get('/styleguide', function () {
-    return view('styleguide');
-});
 
 //Historic
 Route::group(['prefix' => 'historic'], function () {
@@ -44,3 +41,7 @@ Route::get('/badgeTest', 'BadgesController@getTestPage');
 Route::get('/start-tour', function () {
     return view('pages.start-tour');
 })->name('start-tour');
+
+Route::get('/start-tour/score', function () {
+    return view('components.bet.scoreParty');
+});

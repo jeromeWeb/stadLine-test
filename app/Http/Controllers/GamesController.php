@@ -51,6 +51,7 @@ class GamesController extends Controller
       }
 
       return view('pages.start-tour')
+              ->with('dealer_array', $player_names)
               ->with('game', $game);
     }
 
@@ -82,5 +83,23 @@ class GamesController extends Controller
                   ->with('bets', $bets);
     }
 
+    public function nextTurn(Request $request){
+      $game = Game::find($request->get('game_id'));
+      $round = $game->getCurrentRound();
+      $results = $request->get('results');
+      foreach ($results as $user_id => $value) {
+        $round_user = RoundUser::where('round_id', $round->id)->where('user_id', $user_id)->first();
+        $round_user->result = $value;
+        if($round_user->result == $round_user->bet){
+          $round_user->point = $game->calculateScore($round->nb_card, $round_user->result);
+        }
+        $round_user->save();
+      }
+      return $this->beginTurn($request);
+    }
+
+    public function loadScore($game){
+      dd('gneeeeeh');
+    }
 
 }
