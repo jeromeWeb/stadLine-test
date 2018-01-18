@@ -22,6 +22,7 @@
 // });
 
 // require('./hello');
-require('./historic.js');
+require('./historic');
 require('./jquery-ui');
 require('./home');
+require('./game');

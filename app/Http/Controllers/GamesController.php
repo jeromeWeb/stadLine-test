@@ -29,4 +29,33 @@ class GamesController extends Controller
                 ->with('page', $page);
     }
 
+    public function createGame(Request $request){
+      $player_names= $request->get('players');
+      $players = User::whereIn("pseudo", $player_names);
+      if($players->count() < count($player_names)){
+        $player_names = array_diff($player_names, $players->pluck('pseudo')->toArray());
+        foreach ($player_names as $player_name) {
+          $players->push(User::create([
+            'pseudo' => $player_name,
+            'type' => 0
+          ]));
+        }
+      }
+
+      $game = Game::create();
+      foreach ($players as $player) {
+        $game->addPlayer($player);
+      }
+
+      $this->beginTurn($game);
+    }
+
+    public function beginTurn($game){
+      $game->addRound();
+    }
+
+    public function setPredictions($requests){
+      
+    }
+
 }

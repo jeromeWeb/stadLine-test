@@ -16,3 +16,4 @@
     @endfor
 </ul>
 
+<button class="js-valid-players" type="button" name="button">Commencer</button>
