@@ -39,12 +39,12 @@ class Kernel extends ConsoleKernel
 
 
         $schedule->call(function(){
-            
-            $text = 'test bou test';
-            $contacts = array('email' => 'sandradelaporte@gmail.com', 'email' => 'remi@gmail.com');
 
-            foreach ($contacts as $contact) {
-                $test = Mail::send('email.newsletter', ['email' => 'sandradelaporte@gmail.com', 'emailText' => $text], function($message)
+            $text = 'test bou test';
+            $emails = array('sandradelaporte@gmail.com', 'remi@gmail.com');
+
+            foreach ($emails as $email) {
+                $test = Mail::send('email.newsletter', ['email' => $email, 'emailText' => $text], function($message)
                 {
                     $message->from('motton@motton.com', 'Motton');
                     $message->to('sandradelaporte@gmail.com', 'Motton')->subject('Motton');
@@ -53,9 +53,6 @@ class Kernel extends ConsoleKernel
 
         })
         ->everyMinute();
-
-
-
 
     }
 
