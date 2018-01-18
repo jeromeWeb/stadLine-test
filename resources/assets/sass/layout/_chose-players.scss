@@ -1,0 +1,37 @@
+.wrap-chose-players {
+    min-height: 100vh;
+    // background: $brand-color;
+    // color: $white;
+    padding-top: 6 * $gutter;
+    display: none;
+
+    h2, ul {
+        transition: transform .4s ease-in, opacity .4s ease-in;
+        transition-delay: .1s;
+        &.moved {
+            transform: translate(0, $gutter);
+            opacity: 0;
+        }
+    }
+
+    ul {
+        padding-top: 3 * $gutter;
+
+        li {
+            margin-bottom: $gutter;
+        }
+    }
+}
+
+.back-home {
+    color: $brand-color;
+    position: absolute;
+    top: $gutter;
+    right: $gutter;
+    display: none;
+    transition: opacity $anim-base;
+
+    &.opaq {
+        opacity: 0;
+    }
+}

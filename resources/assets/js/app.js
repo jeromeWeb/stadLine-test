@@ -21,4 +21,5 @@
 //     el: '#app'
 // });
 
-require('./hello');
+require('./jquery-ui');
+require('./home');
