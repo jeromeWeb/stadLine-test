@@ -4,20 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rounds extends Model
+class Round extends Model
 {
+		public $table = 'rounds';
+    public $timestamps = false;
 
-	public $table = 'rounds';
-   	public $timestamps = false;
-
-	public function users(){
-
+		public function users()
+    {
         return $this->hasMany(User::class, 'user_id');
     }
 
-	public function game(){
-		
-		return $this->belongsTo(Game::class);
-	}
+		public function game()
+		{
+				return $this->belongsTo(Game::class);
+		}
 
+		public function players()
+		{
+				return $this->hasMany(Player::class, 'round_id');
+		}
 }

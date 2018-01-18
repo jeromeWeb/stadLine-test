@@ -38,6 +38,11 @@ class User extends Authenticatable
         return belongsToMany('App\Game', 'games_winners', 'user_id', 'game_id');
     }
 
+    // // Retrouver les parties auxquels le joueur à participer
+    // public function userGames() {
+    //     return belongsToMany('App\Game', '')
+    // }
+
     // Retrouver les tours joués par l'utilisateur
     // public function rounds() {
     //     return hasMany('App\Round');

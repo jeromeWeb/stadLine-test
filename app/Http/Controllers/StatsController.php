@@ -28,7 +28,11 @@ class StatsController extends Controller
      * @return Response
      */
 
-    public function showStats($game_id) {
+    public function showStatsGames($user_id) {
+    	$stats = User::with(['rounds:id', 'game:id,time', 'statsDetails:id,user_stats_id,won,rising_points,points,won_bets', 'user_stats:id', 'user:pseudo']);
+    }
+
+    public function showStatsDetails($game_id) {
     	$stats = UserStatsDetails::where('game_id', $game_id);
 
     	// ajouter la vue à renseigner
