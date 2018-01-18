@@ -1,2 +1,2 @@
-<label for="">Pseudo</label>
+<label for="">Joueur n°</label>
 <input id="" type="text" name="" value="">

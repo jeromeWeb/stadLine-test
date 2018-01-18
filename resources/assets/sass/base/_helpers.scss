@@ -24,6 +24,8 @@
   padding-left: $gutter; /* 3 */
   padding-right: $gutter; /* 3 */
   width: 100%; /* 1 */
+  min-height: 100vh;
+  position: relative;
  }
 
 /**
@@ -55,6 +57,10 @@
   width: 1px;
 }
 
+.hidden {
+    display: none;
+}
+
 
 // text-align center
 .text-center {
@@ -62,7 +68,23 @@
 }
 
 
-// no padding class
+// padding class
 .nopadding {
     padding: 0;
+}
+
+.padding-gutter {
+    padding: $gutter;
+}
+
+
+// center display table hack
+.center-table {
+    display: table;
+
+    .center-cell {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
 }

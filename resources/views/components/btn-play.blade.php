@@ -1,1 +1,3 @@
-<a class="btn-play h1">Play</a>
+<a class="btn-play h1 center-table" id="startGame">
+    <span class="center-cell">Play</span>
+</a>
