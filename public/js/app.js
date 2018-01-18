@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(7);
+module.exports = __webpack_require__(9);
 
 
 /***/ }),
@@ -98,17 +98,13 @@ module.exports = __webpack_require__(7);
 //     el: '#app'
 // });
 
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
 // require('./hello');
 __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(5);
 __webpack_require__(6);
+__webpack_require__(7);
+__webpack_require__(8);
 
 /***/ }),
 /* 2 */
@@ -11043,39 +11039,20 @@ backHome.on('click', function () {
 /* 6 */
 /***/ (function(module, exports) {
 
-$(function () {
+$(document).on('click', ".showGame", function () {
+  $('.inputBet-js').slideToggle(300);
+  $('.dealer-js').slideUp(300);
+});
 
-  $(document).on('click', '.js-start-game', function () {
-    var players = [];
-    $('#player-inputs').find('li').children('input').each(function () {
-      if ($(this).val() && $(this).val() != "") {
-        players.push($(this).val());
-      }
-    });
+$(document).on('click', ".showResult", function () {
+  $('.inputBetResult-js').slideToggle(300);
+  $('.inputBet-js').slideUp(300);
+});
 
-    if (players.length < 3) {
-      $('.error-players').html("Veuillez entrer au moins trois noms");
-    } else {
-      $.ajax({
-        url: window.location.origin + '/game/create',
-        type: 'POST',
-        data: {
-          players: JSON.stringify(players)
-        },
-        success: function success(response) {
-          $('#main-section').html(response);
-        }
-      });
-    }
-  });
 
-  $(document).on('click', ".showGame", function () {
-    newTurn();
-  });
-
-  $(document).on('click', ".showResult", function () {
-    fillBet();
-  });
+$(document).on('click', ".showScore", function () {
+  $('.score-js').slideToggle(300);
+  $('.inputBetResult-js').slideUp(300);
 
   $(document).on('click', ".fillResult", function () {
     var results = {};
@@ -11098,40 +11075,26 @@ $(function () {
   });
 
   $(document).on('click', ".showScore", function () {});
+
 });
 
-function showGame() {
-  $('.inputBet-js').slideDown(300);
-  $('.dealer-js').slideUp(300);
-}
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
 
-function showResult() {
-  $('.inputBet-js').slideUp(300, function () {
-    $('body').scrollTop(0);
-    $('.inputBetResult-js').slideDown(300);
-  });
-}
 
-function showScore() {
-  $('.inputBetResult-js').slideUp(300, function () {
-    $('body').scrollTop(0);
-    $('.score-js').slideDown(300);
-  });
-}
 
-function newTurn() {
-  $.ajax({
-    url: window.location.origin + '/game/newTurn',
-    type: 'POST',
-    data: {
-      game_id: $('#playing-game').data('game-id')
-    },
-    success: function success(response) {
-      $('#bet-field').html(response);
-      showGame();
-    }
-  });
-}
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+
+var avatarBet = $('[data-stape="bet"] .players'),
+    avatarResult = $('[data-stape="result"] .players'),
+    avatarScore = $('[data-stape="score"] .players'),
+    avatarScoreParty = $('[data-stape="scoreParty"] .players'),
+    avatarDealer = $('.dealer-js');
+tabs = [avatarBet, avatarResult, avatarScore, avatarScoreParty];
 
 function nextTurn() {
   var results = {};
@@ -11175,12 +11138,17 @@ function fillBet() {
   });
 }
 
-function nextTurn() {
-  showResult();
+
+for (tab in tabs) {
+	for (var i = 1; i <= tabs[tab].length; i++) {
+		tabs[tab].eq('' + (i - 1)).find('.avatar').addClass('avatar' + i);
+	}
 }
 
+$('.dealer-js').find('.avatar').addClass('avatarXl').removeClass('avatar');
+
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

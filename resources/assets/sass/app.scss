@@ -3,13 +3,12 @@
 // 1. Configuration and helpers
 @import
   'abstracts/variables',
-  'abstracts/functions',
+  // 'abstracts/functions',
   'abstracts/mixins';
 
 // 2. Vendors
 @import
   'vendor/reset',
-  // 'vendor/normalize',
   'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables',
   'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins',
   'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
@@ -31,11 +30,10 @@
   'components/button',
   'components/btn-play',
   'components/avatar',
+  'components/forms',
+  'components/settings',
   'components/bet';
 
 // 6. Page-specific styles
 @import
   'pages/home';
-// 7. Themes
-@import
-  'themes/default';

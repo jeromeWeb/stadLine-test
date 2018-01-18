@@ -1,3 +1,9 @@
+{{-- @extends('welcome')
+
+
+@section('meta_title')
+{{ __('Motton') }}
+@endsection --}}
 <div id="playing-game" data-game-id="{{$game->id}}">
   <div class="dealer-js">
     @include('components.playerToBegin', ['dealer'=> $dealer_array[0] ])
@@ -21,6 +27,3 @@
       </div>
   </div>
 </div>
-
-
-{{-- @endsection --}}

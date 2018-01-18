@@ -1,6 +1,6 @@
 <aside class="sidebar">
 
-    <nav>
+    <nav id="navSide">
         @include('components.avatar')
         <ul>
             <li>

@@ -1,10 +1,11 @@
 
-<header class="col-xs-12">
-	<h2 class="h2 fw-black ">Prédiction</h2>
-	<p class="h3">Tour {{$round->nb_round}} - {{$round->nb_card}} Cartes</p>
-</header>
-
-<section class="col-xs-12 col-sm-6 col-sm-push-3" id="bet-inputs">
+<div class="clearfix">
+	<header class="col-xs-12">
+		<h2 class="h2 fw-black ">Prédiction</h2>
+		<p class="h3">Tour {{$round->nb_round}} - {{$round->nb_card}} Cartes</p>
+	</header>
+</div>
+<section data-stape="bet" class="col-xs-12 col-sm-6 col-sm-push-3" id="bet-inputs">
 @php $i = 1; @endphp
 @foreach($game->players->pluck('user') as $player)
 	<div class="players clearfix">
@@ -26,7 +27,6 @@
 </div>
 
 </section>
-
 
 
 {{-- @include('components.bet.paveNumerique') --}}
