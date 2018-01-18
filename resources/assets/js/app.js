@@ -23,3 +23,4 @@
 
 require('./jquery-ui');
 require('./home');
+require('./google');
