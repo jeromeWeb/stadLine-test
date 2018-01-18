@@ -29,7 +29,6 @@ $.ajaxSetup({
 
 // require('./hello');
 require('./historic');
-require('./jquery-ui');
 require('./home');
 require('./start-tour');
 require('./game');
