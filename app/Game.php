@@ -12,10 +12,10 @@ use DB;
 class Game extends Model
 {
   public $table = 'games';
-  public $timestamps = true;  
+  public $timestamps = true;
 
   public function statsDetails() {
-  	return $this->hasMany(UserStatsDetails::class)
+  	return $this->hasMany(UserStatsDetails::class);
   }
 
   public function rounds()
@@ -52,7 +52,7 @@ class Game extends Model
 
   public function calculateNbCards(){
     $count = $this->getCurrentRoundCount();
-    return $count <= 10? $count + 10 : $count - 10;
+    return $count <= 10? 10 - $count : $count - 10;
   }
 
   public function calculateScore($nb_card, $score){

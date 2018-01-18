@@ -103,8 +103,9 @@ function nextTurn(){
       results:results
     },
     success: function(response){
+
       $('#bet-field').html(response);
-      $('.inputBetResult-js').slideUp(300);
+
       showGame();
     }
   });

@@ -98,7 +98,7 @@ class GamesController extends Controller
     }
 
     public function loadScore($game){
-      dd('gneeeeeh');
+      
     }
 
 }
