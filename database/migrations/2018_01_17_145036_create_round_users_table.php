@@ -22,8 +22,8 @@ class CreateRoundUsersTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
             $table->integer('bet')->unsigned();
-            $table->integer('result')->unsigned();
-            $table->integer('point')->unsigned();
+            $table->integer('result')->unsigned()->nullable();
+            $table->integer('point')->unsigned()->nullable();
         });
     }
 

@@ -8,7 +8,7 @@ body {
 
 h1, .h1 {
     font-size: $size-h1;
-    font-weight: $fw-bold;
+    font-weight: $fw-black;
 }
 h2, .h2 {
     font-size: $size-h2;
@@ -16,6 +16,38 @@ h2, .h2 {
 h3, .h3 {
     font-size: $size-h3;
 }
+p, .p {
+    font-size: $size-p;
+}
 small, .small {
     font-size: $size-small;
+}
+
+.txt-brand {
+    color: $brand-color;
+}
+
+.txt-light-grey {
+    color: $light-grey;
+}
+.txt-grey {
+    color: $mid-grey;
+}
+.txt-dark-grey {
+    color: $dark-grey;
+}
+
+.txt-ui-green {
+    color: $brand-success;
+}
+.txt-ui-red {
+    color: $brand-danger;
+}
+
+
+.fw-black {
+    font-weight: $fw-black;
+}
+.fw-bold {
+    font-weight: $fw-bold;
 }
