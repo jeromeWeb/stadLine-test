@@ -1186,16 +1186,11 @@ a {
 a:hover,
 a:active,
 a:focus {
-<<<<<<< HEAD
   color: #292623;
-=======
-  color: #484040;
->>>>>>> openMottonGuillaumeFront
   text-decoration: underline;
 }
 
 /**
-<<<<<<< HEAD
  * Basic typography style for copy text
  */
 
@@ -1206,7 +1201,7 @@ body {
 h1,
 .h1 {
   font-size: 38px;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 h2,
@@ -1224,10 +1219,7 @@ small,
   font-size: 12px;
 }
 
-
 /**
-=======
->>>>>>> openMottonGuillaumeFront
  * Clear inner floats
  */
 
@@ -1293,7 +1285,6 @@ small,
   width: 1px;
 }
 
-<<<<<<< HEAD
 .hidden {
   display: none;
 }
@@ -1549,7 +1540,6 @@ small,
           transform: translate(-50%, -50%);
 }
 
-
 .btn-play:hover,
 .btn-play:active,
 .btn-play:focus {
@@ -1575,30 +1565,6 @@ small,
   opacity: 1;
 }
 
-.wrap-home {
-  background: #fff;
-  -webkit-transition: opacity .3s .3s ease-in;
-  transition: opacity .3s .3s ease-in;
-  overflow: hidden;
-}
-
-.wrap-home .title {
-  margin-top: 100px;
-  -webkit-transform: translate(0, -40px);
-          transform: translate(0, -40px);
-  opacity: 0;
-}
-
-.wrap-home .title.moved {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-}
-
-.wrap-home.hidden-page {
-  opacity: 0;
-}
-=======
 .avatar {
   display: block;
   width: 50px;
@@ -1667,7 +1633,7 @@ body {
 
 .bet section .players label,
 .bet section .players input {
-  color: #484040;
+  color: #292623;
 }
 
 .bet section .players input {
@@ -1679,7 +1645,7 @@ body {
   margin: 0 0 0 20px;
   text-align: center;
   -moz-appearance: textfield;
-  color: #484040;
+  color: #292623;
 }
 
 .bet section .players .bet-result {
@@ -1718,4 +1684,27 @@ body {
   color: #ffffff;
 }
 
->>>>>>> openMottonGuillaumeFront
+.wrap-home {
+  background: #fff;
+  -webkit-transition: opacity .3s .3s ease-in;
+  transition: opacity .3s .3s ease-in;
+  overflow: hidden;
+}
+
+.wrap-home .title {
+  margin-top: 100px;
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+  opacity: 0;
+}
+
+.wrap-home .title.moved {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
+.wrap-home.hidden-page {
+  opacity: 0;
+}
+
