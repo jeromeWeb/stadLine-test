@@ -11083,7 +11083,7 @@ $(function () {
           players: JSON.stringify(players)
         },
         success: function success(response) {
-          $('#player-inputs').html(response);
+          $('#main-section').html(response);
         }
       });
     }

@@ -17,7 +17,7 @@ $(function(){
             players: JSON.stringify(players)
           },
           success: function(response){
-            $('#player-inputs').html(response)
+            $('#main-section').html(response)
           }
         });
       }

@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <div class="container nopadding">
+        <div id="main-section" class="container nopadding">
             @yield('section')
         </div>
 

@@ -48,7 +48,9 @@ class GamesController extends Controller
         $game->addPlayer($player);
       }
 
-      $this->beginTurn($game);
+      //$this->beginTurn($game);
+      return view('pages.start-tour')
+              ->with('game', $game);
     }
 
     public function beginTurn($game){
