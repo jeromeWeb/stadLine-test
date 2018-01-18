@@ -11073,7 +11073,9 @@ $(function () {
     newTurn();
   });
 
-  $(document).on('click', ".showResult", function () {});
+  $(document).on('click', ".showResult", function () {
+    fillBet();
+  });
 
   $(document).on('click', ".showScore", function () {});
 });
@@ -11109,6 +11111,30 @@ function newTurn() {
       showGame();
     }
   });
+}
+
+function fillBet() {
+  var bets = {};
+  $('#bet-inputs').children('.players').each(function () {
+    var input = $(this).find('input');
+    bets[input.data('id')] = input.val();
+  });
+  $.ajax({
+    url: window.location.origin + '/game/fillBets',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id'),
+      bets: bets
+    },
+    success: function success(response) {
+      $('#result-field').html(response);
+      showGame();
+    }
+  });
+}
+
+function nextTurn() {
+  showResult();
 }
 
 /***/ }),

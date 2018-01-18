@@ -43,12 +43,12 @@ class Game extends Model
   }
 
   public function getCurrentRound(){
-    return $this->rounds->sortBy('nb_round')->last();
+    return Round::where('game_id', $this->id)->orderByDesc('nb_round')->first();
   }
 
   public function calculateNbCards(){
     $count = $this->getCurrentRoundCount();
-    return $count <= 10? 11 - $count : $count - 10;
+    return $count <= 10? $count + 1 : $count - 10;
   }
 
   public function calculateScore($nb_card, $score){

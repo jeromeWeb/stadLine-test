@@ -65,6 +65,25 @@ class GamesController extends Controller
       }
     }
 
+    public function fillBet(Request $request){
+      $game = Game::find($request->get('game_id'));
+      $round = $game->getCurrentRound();
+      $bets = $request->get('bets');
+      foreach ($bets as $user_id => $value) {
+        $round_user = RoundUser::where('round_id', $round->id)->where('user_id', $user_id)->first();
+        $round_user->bet = $value;
+        $round_user->save();
+      }
+      return view('components.bet.input-bet')
+                  ->with('game', $game)
+                  ->with('round', $round)
+                  ->with('bets', $bets);
+    }
+
+    public function endTurn(Request $request){
+
+    }
+
     public function loadScore($game){
 
     }

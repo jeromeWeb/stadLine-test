@@ -29,6 +29,8 @@ Route::group(['prefix' => 'historic'], function () {
 Route::group(['prefix' => 'game'], function () {
   Route::post('/create','GamesController@createGame');
   Route::post('/newTurn','GamesController@beginTurn');
+  Route::post('/fillBets','GamesController@fillBet');
+  Route::post('/nextTurn','GamesController@nextTurn');
 });
 
 //Temp static pages

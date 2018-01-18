@@ -4,7 +4,7 @@
 	<p class="h3">Tour {{$round->nb_round}} - {{$round->nb_card}} Cartes</p>
 </header>
 
-<section class="col-xs-12 col-sm-6 col-sm-push-3">
+<section class="col-xs-12 col-sm-6 col-sm-push-3" id="bet-inputs">
 @php $i = 1; @endphp
 @foreach($game->players->pluck('user') as $player)
 	<div class="players clearfix">
