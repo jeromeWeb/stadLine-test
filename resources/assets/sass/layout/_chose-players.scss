@@ -1,7 +1,7 @@
 .wrap-chose-players {
     min-height: 100vh;
-    background: $brand-color;
-    color: $white;
+    // background: $brand-color;
+    // color: $white;
     padding-top: 6 * $gutter;
     display: none;
 
@@ -24,7 +24,7 @@
 }
 
 .back-home {
-    color: $white;
+    color: $brand-color;
     position: absolute;
     top: $gutter;
     right: $gutter;

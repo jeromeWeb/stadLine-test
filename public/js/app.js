@@ -10957,7 +10957,7 @@ var $win = $(window),
     w = $win.width(),
     h = $win.height();
 diag = w * w + h * h;
-diag = Math.sqrt(diag), wBtn = startBtn.width();
+diag = Math.sqrt(diag), wBtn = startBtn.width(), hBtn = startBtn.height();
 
 // console.log(Math.pow(2, w))
 
@@ -10966,10 +10966,11 @@ startBtn.on('click', function () {
 
     $this.animate({
         height: diag,
-        width: diag
+        width: diag,
+        opacity: 0
     }, 300);
 
-    $this.find('span').addClass('moved');
+    $this.find('span').add('.title').removeClass('moved');
 
     // $('.js-home').animate({
     //     opacity: 0
@@ -10983,17 +10984,16 @@ startBtn.on('click', function () {
         chosePlyrs.find('h2, ul').removeClass('moved');
         backHome.show().removeClass('opaq');
     }, 300);
-
-    navBurger.add(sideBar).addClass('reverse');
 });
 
 backHome.on('click', function () {
     startBtn.animate({
-        height: wBtn,
-        width: wBtn
+        height: hBtn,
+        width: wBtn,
+        opacity: 1
     }, 300);
 
-    startBtn.find('span').removeClass('moved');
+    startBtn.find('span').add('.title').addClass('moved');
 
     backHome.addClass('opaq');
     home.removeClass('hidden-page');
@@ -11004,8 +11004,6 @@ backHome.on('click', function () {
         chosePlyrs.find('h2, ul').addClass('moved');
         backHome.show();
     }, 300);
-
-    navBurger.add(sideBar).removeClass('reverse');
 });
 
 /***/ })

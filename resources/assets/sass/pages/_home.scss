@@ -9,8 +9,15 @@
     transition: opacity .3s .3s ease-in;
     overflow: hidden;
 
-    h1 {
+    .title {
         margin-top: 100px;
+        transform: translate(0, -40px);
+        opacity: 0;
+
+        &.moved {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
     }
 
     &.hidden-page {
