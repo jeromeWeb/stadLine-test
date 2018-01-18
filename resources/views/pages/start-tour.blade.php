@@ -28,16 +28,3 @@
       </div>
   </div>
 </div>
-
-
-<<<<<<< HEAD
-{{-- @endsection --}}
-=======
-<div class="hidden score-js">
-    <div class="bet clearfix">
-       @include('components/bet/scoreParty')
-    </div>
-</div>
-
-@endsection
->>>>>>> openMottonGuillaumeFront

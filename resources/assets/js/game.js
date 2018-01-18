@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
     $(document).on('click', '.js-start-game', function(){
       var players = [];
       $('#player-inputs').find('li').children('input').each(function(){
@@ -22,6 +20,3 @@
         });
       }
     })
-})
-=======
->>>>>>> openMottonGuillaumeFront

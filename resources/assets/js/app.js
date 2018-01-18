@@ -32,7 +32,4 @@ require('./historic');
 require('./home');
 require('./start-tour');
 require('./game');
-<<<<<<< HEAD
-=======
 require('./avatar');
->>>>>>> openMottonGuillaumeFront

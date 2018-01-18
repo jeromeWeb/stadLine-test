@@ -1256,13 +1256,10 @@ small,
   font-weight: 600;
 }
 
-<<<<<<< HEAD
 .uppercase {
   text-transform: uppercase;
 }
 
-=======
->>>>>>> openMottonGuillaumeFront
 /**
  * Clear inner floats
  */
@@ -1692,7 +1689,57 @@ small,
           box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
 }
 
-<<<<<<< HEAD
+.avatar1,
+.avatarXl {
+  background: url("/img/avatar1.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar2 {
+  background: url("/img/avatar2.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar3 {
+  background: url("/img/avatar3.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar4 {
+  background: url("/img/avatar4.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar5 {
+  background: url("/img/avatar5.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatarXl {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+.dealer-js {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.dealer-js p {
+  margin: 30px 0;
+  color: #949391;
+}
+
+.dealer-js p span {
+  text-transform: capitalize;
+  color: #292623;
+  line-height: 1.5;
+}
+
 .settings-btn {
   position: absolute;
   top: 15px;
@@ -1782,41 +1829,6 @@ small,
   width: 20px;
   height: 2px;
   background: #f18832;
-=======
-.avatar1,
-.avatarXl {
-  background: url("/img/avatar1.png") no-repeat center;
-  background-size: cover;
-}
-
-.avatar2 {
-  background: url("/img/avatar2.png") no-repeat center;
-  background-size: cover;
-}
-
-.avatar3 {
-  background: url("/img/avatar3.png") no-repeat center;
-  background-size: cover;
-}
-
-.avatar4 {
-  background: url("/img/avatar4.png") no-repeat center;
-  background-size: cover;
-}
-
-.avatar5 {
-  background: url("/img/avatar5.png") no-repeat center;
-  background-size: cover;
-}
-
-.avatarXl {
-  width: 150px;
-  height: 150px;
-  margin: auto;
-}
-
-.dealer-js {
->>>>>>> openMottonGuillaumeFront
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1824,7 +1836,6 @@ small,
           transform: translate(-50%, -50%);
 }
 
-<<<<<<< HEAD
 .close-settings:after {
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
           transform: translate(-50%, -50%) rotate(45deg);
@@ -1833,17 +1844,6 @@ small,
 .close-settings:before {
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           transform: translate(-50%, -50%) rotate(-45deg);
-=======
-.dealer-js p {
-  margin: 30px 0;
-  color: #949391;
-}
-
-.dealer-js p span {
-  text-transform: capitalize;
-  color: #292623;
-  line-height: 1.5;
->>>>>>> openMottonGuillaumeFront
 }
 
 .bet header,
