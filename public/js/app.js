@@ -69,7 +69,11 @@
 
 __webpack_require__(1);
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = __webpack_require__(8);
+=======
+module.exports = __webpack_require__(5);
+>>>>>>> FrontZoe
 
 
 /***/ }),
@@ -99,6 +103,7 @@ module.exports = __webpack_require__(8);
 //     el: '#app'
 // });
 
+<<<<<<< HEAD
 // require('./hello');
 __webpack_require__(2);
 __webpack_require__(3);
@@ -11007,6 +11012,52 @@ function loadHistoric(changed_type, changed_value) {
   });
 }
 
+=======
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+// require('./hello');
+__webpack_require__(2);
+__webpack_require__(3);
+__webpack_require__(4);
+__webpack_require__(9);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// npm run watch
+
+$(function () {
+
+  $(document).on('change', '#just-me', function () {
+    loadHistoric('justMe', $(this).is(':checked'));
+  });
+
+  $(document).on('change', '.js-sort-games', function () {
+    loadHistoric('sorter', $(this).val());
+  });
+});
+
+function loadHistoric(changed_type, changed_value) {
+  $.ajax({
+    url: baseUrl + '/historic/load',
+    type: 'POST',
+    data: {
+      page: changed_type == 'page' ? changed_value : $('#games-pool').find('data').data('page'),
+      justMe: changed_type == 'justMe' ? changed_value : $('#just-me').is(':checked'),
+      sorter: changed_type == 'sorter' ? changed_value : $('.js-sort-games').val()
+    },
+    success: function success(response) {
+      $('#games-pool').html(response);
+    }
+  });
+}
+
+>>>>>>> FrontZoe
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
@@ -11073,6 +11124,7 @@ backHome.on('click', function () {
     }, 300);
 });
 
+<<<<<<< HEAD
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
@@ -11083,22 +11135,35 @@ $(document).on('click', ".info-click-js", function () {
   setTimeout(function () {
     $('.info-dealer').hide(300);
   }, 3500);
+=======
+// Settings button
+$('.settings-js, .close-settings').on('click', function () {
+    $('.settings-panel').slideToggle(200, function () {
+        $(this).toggleClass('open');
+    });
+>>>>>>> FrontZoe
+});
+
+// click outside settings and sidebar close open elements
+$(window).on("click", function (event) {
+    // Settings close
+    if ($('.settings-panel').hasClass('open') && $('.settings-panel').has(event.target).length == 0 && !$('.settings-panel').is(event.target)) {
+        $('.settings-panel').slideUp(200, function () {
+            $(this).removeClass('open');
+        });
+    }
+
+    // sidebar
+    // if (!$('#navBurger').prop('checked') && $('#navSide').has(event.target).length == 0 && !$('#navSide').is(event.target) ){
+    //         $('#navBurger').prop('checked', true);
+    // }
 });
 
 /***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, exports) {
 
-$(document).on('click', ".showGame", function () {
-  $('.inputBet-js').slideToggle(300);
-  $('.dealer-js').slideUp(300);
-});
-
-$(document).on('click', ".showResult", function () {
-  $('.inputBetResult-js').slideToggle(300);
-  $('.inputBet-js').slideUp(300);
-});
-
+<<<<<<< HEAD
 $(document).on('click', ".showScore", function () {
   $('.score-js').slideToggle(300);
   $('.inputBetResult-js').slideUp(300);
@@ -11109,6 +11174,31 @@ $(document).on('click', '.js-start-game', function () {
   $('#player-inputs').find('li').children('input').each(function () {
     if ($(this).val() && $(this).val() != "") {
       players.push($(this).val());
+=======
+$(function () {
+
+  $(document).on('click', '.js-start-game', function () {
+    var players = [];
+    $('#player-inputs').find('li').children('input').each(function () {
+      if ($(this).val() && $(this).val() != "") {
+        players.push($(this).val());
+      }
+    });
+
+    if (players.length < 3) {
+      $('.error-players').html("Veuillez entrer au moins trois noms");
+    } else {
+      $.ajax({
+        url: window.location.origin + '/game/create',
+        type: 'POST',
+        data: {
+          players: JSON.stringify(players)
+        },
+        success: function success(response) {
+          $('#main-section').html(response);
+        }
+      });
+>>>>>>> FrontZoe
     }
   });
 
@@ -11132,8 +11222,12 @@ $(document).on('click', ".showGame", function () {
   newTurn();
 });
 
+<<<<<<< HEAD
 $(document).on('click', ".showResult", function () {
   fillBet();
+=======
+  $(document).on('click', ".showScore", function () {});
+>>>>>>> FrontZoe
 });
 
 $(document).on('click', ".showScore", function () {});
@@ -11197,6 +11291,7 @@ function nextTurn() {
 
 /***/ }),
 /* 5 */
+<<<<<<< HEAD
 /***/ (function(module, exports) {
 
 var avatarBet = $('[data-stape="bet"] .players'),
@@ -11217,9 +11312,25 @@ $('.dealer-js').find('.avatar').addClass('avatarXl').removeClass('avatar');
 
 /***/ }),
 /* 6 */
+=======
+>>>>>>> FrontZoe
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
+/***/ (function(module, exports) {
+
+$(document).on('click', ".info-click-js", function () {
+  $('.info-dealer').toggle(300);
+  setTimeout(function () {
+    $('.info-dealer').hide(300);
+  }, 3500);
+});
 
 /***/ })
 /******/ ]);

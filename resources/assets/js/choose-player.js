@@ -3,5 +3,4 @@ $(document).on('click',".info-click-js",function(){
   setTimeout(function(){
       $('.info-dealer').hide(300);
   },3500);
-
 } )
