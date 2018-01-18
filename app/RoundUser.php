@@ -8,5 +8,5 @@ class RoundUser extends Model
 {
     public $table='round_users';
     public $timestamps = false;
-    protected $fillable = ['round_id', 'user_id'];
+    protected $fillable = ['round_id', 'user_id', 'game_id', 'point', 'bet', 'result'];
 }
