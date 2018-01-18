@@ -52,7 +52,7 @@ class Game extends Model
 
   public function calculateNbCards(){
     $count = $this->getCurrentRoundCount();
-    return $count <= 10? $count + 10 : $count - 10;
+    return $count <= 10? 10 - $count : $count - 10;
   }
 
   public function calculateScore($nb_card, $score){
