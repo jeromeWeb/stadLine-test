@@ -11128,7 +11128,7 @@ function fillBet() {
     },
     success: function success(response) {
       $('#result-field').html(response);
-      showGame();
+      showResult();
     }
   });
 }

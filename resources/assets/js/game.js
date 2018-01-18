@@ -84,7 +84,7 @@ function fillBet(){
     },
     success: function(response){
       $('#result-field').html(response);
-      showGame();
+      showResult();
     }
   });
 }

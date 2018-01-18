@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Game;
 use App\User;
+use App\RoundUser;
+use App\Round;
 
 class GamesController extends Controller
 {
@@ -74,7 +76,7 @@ class GamesController extends Controller
         $round_user->bet = $value;
         $round_user->save();
       }
-      return view('components.bet.input-bet')
+      return view('components.bet.input-betResult')
                   ->with('game', $game)
                   ->with('round', $round)
                   ->with('bets', $bets);
