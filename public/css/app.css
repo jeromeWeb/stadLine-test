@@ -1523,6 +1523,37 @@ small,
   opacity: 0;
 }
 
+.btn {
+  display: block;
+  border: 0;
+  border-radius: 25px;
+  font-size: 21px;
+  text-align: center;
+  width: 250px;
+  padding: 12px;
+}
+
+.center-buttons .btn {
+  display: inline-block;
+}
+
+.center-buttons .btn:first-child {
+  margin-right: 20px;
+}
+
+.btn-secondaire-1 {
+  background-color: #949391;
+  color: #fff;
+}
+
+.btn-secondaire-1:hover,
+.btn-secondaire-1:active,
+.btn-secondaire-1:focus {
+  background-color: #f18832;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+
 .btn-play {
   padding: 15px;
   width: 250px;
