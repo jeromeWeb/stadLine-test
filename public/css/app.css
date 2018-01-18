@@ -1219,6 +1219,7 @@ small,
   font-size: 12px;
 }
 
+
 /**
  * Clear inner floats
  */
@@ -1575,6 +1576,7 @@ small,
           transform: translate(-50%, -50%);
 }
 
+
 .btn-play:hover,
 .btn-play:active,
 .btn-play:focus {
@@ -1611,4 +1613,3 @@ small,
 .wrap-home.hidden-page {
   opacity: 0;
 }
-
