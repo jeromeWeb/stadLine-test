@@ -9,6 +9,11 @@ html {
   box-sizing: border-box;
 }
 
+html, body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -27,6 +32,7 @@ html {
 a {
   color: $brand-color;
   text-decoration: none;
+  cursor: pointer;
 
   @include on-event {
     color: $text-color;

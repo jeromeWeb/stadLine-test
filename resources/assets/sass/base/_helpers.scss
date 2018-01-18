@@ -21,9 +21,11 @@
   max-width: $max-width; /* 1 */
   margin-left: auto; /* 2 */
   margin-right: auto; /* 2 */
-  padding-left: 20px; /* 3 */
-  padding-right: 20px; /* 3 */
+  padding-left: $gutter; /* 3 */
+  padding-right: $gutter; /* 3 */
   width: 100%; /* 1 */
+  min-height: 100vh;
+  position: relative;
  }
 
 /**
@@ -36,6 +38,7 @@
   padding: 0; /* 1 */
   text-indent: 101%;
   white-space: nowrap;
+  display: block;
 }
 
 /**
@@ -52,4 +55,36 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+// text-align center
+.text-center {
+    text-align: center;
+}
+
+
+// padding class
+.nopadding {
+    padding: 0;
+}
+
+.padding-gutter {
+    padding: $gutter;
+}
+
+
+// center display table hack
+.center-table {
+    display: table;
+
+    .center-cell {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
 }
