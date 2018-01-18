@@ -19,7 +19,7 @@
 		</div>
 	</div>
 @endfor<div class="bet-btn">
-	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Jouer'])
+	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Jouer', 'classJS'=>''])
 </div>
 
 </section>
