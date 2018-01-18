@@ -1,2 +1,2 @@
-<label for="">Joueur n°</label>
-<input id="" type="text" name="" value="">
+<label for="player{{$j}}">Joueur {{$j}}</label>
+<input id="player{{$j}}" type="text" name="" value="">
