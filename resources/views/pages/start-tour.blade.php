@@ -6,7 +6,7 @@
 {{ __('Motton') }}
 @endsection
 
-<div class="dealer-js">
+<div class="dealer-js padding-gutter">
   @include('components.playerToBegin', ['dealer'=>'manu'])
 </div>
 

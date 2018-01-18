@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(8);
 
 
 /***/ }),
@@ -100,12 +100,10 @@ module.exports = __webpack_require__(6);
 
 // require('./hello');
 __webpack_require__(2);
-<<<<<<< HEAD
 __webpack_require__(3);
-=======
-__webpack_require__(4);
->>>>>>> frontGeneral
 __webpack_require__(5);
+__webpack_require__(6);
+__webpack_require__(7);
 
 /***/ }),
 /* 2 */
@@ -11040,6 +11038,17 @@ backHome.on('click', function () {
 /* 6 */
 /***/ (function(module, exports) {
 
+$(document).on('click', ".info-click-js", function () {
+  $('.info-dealer').toggle(300);
+  setTimeout(function () {
+    $('.info-dealer').hide(300);
+  }, 3500);
+});
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
 $(document).on('click', ".showGame", function () {
   $('.inputBet-js').slideToggle(300);
   $('.dealer-js').slideUp(300);
@@ -11056,7 +11065,7 @@ $(document).on('click', ".showScore", function () {
 });
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

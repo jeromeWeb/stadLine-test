@@ -1,5 +1,5 @@
 <header class="col-xs-12">
-	<h2 class="h2 fw-black ">Resultat</h2>
+	<h2 class="h2 fw-black ">En cours</h2>
 	<p class="h3">Fin du 1er Tour - 10 Cartes</p>
 </header>
 
