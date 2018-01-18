@@ -1,11 +1,10 @@
 <div class="clearfix">
 	<header class="col-xs-12 col-sm-6 col-sm-push-3">
-		<h2 class="h2 fw-black ">Scores</h2>
-		<p class="h3">1er Tour - 10 Cartes</p>
+		<h2 class="h2 fw-black ">Résultat de la partie</h2>
 	</header>
 </div>
 
-<section data-stape="score" class="col-xs-12 col-sm-6 col-sm-push-3">
+<section data-stape="scoreParty" class="col-xs-12 col-sm-6 col-sm-push-3">
 @for ($i = 1; $i <= 5; $i++)
 	<div class="players clearfix">
 		<div class="pull-left">
@@ -20,8 +19,15 @@
 			{{-- <p class="txt-ui-red">+ 0 point</p> --}}
 		</div>
 	</div>
-@endfor<div class="bet-btn">
-	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Tour suivant', 'classJS'=>''])
+@endfor
+
+
+<div class="bet-btn">
+	@include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Nouvelle partie', 'classJS'=>''])
 </div>
 
 </section>
+
+
+
+{{-- @include('components.bet.paveNumerique') --}}

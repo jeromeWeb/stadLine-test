@@ -25,6 +25,9 @@ Route::group(['prefix' => 'historic'], function () {
 //Game
 Route::group(['prefix' => 'game'], function () {
   Route::post('/create','GamesController@createGame');
+  Route::post('/newTurn','GamesController@beginTurn');
+  Route::post('/fillBets','GamesController@fillBet');
+  Route::post('/nextTurn','GamesController@nextTurn');
 });
 
 //Temp static pages
@@ -38,3 +41,7 @@ Route::get('/badgeTest', 'BadgesController@getTestPage');
 Route::get('/start-tour', function () {
     return view('pages.start-tour');
 })->name('start-tour');
+
+Route::get('/start-tour/score', function () {
+    return view('components.bet.scoreParty');
+});

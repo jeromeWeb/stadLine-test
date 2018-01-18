@@ -33,3 +33,4 @@ require('./home');
 require('./choose-player');
 require('./start-tour');
 require('./game');
+require('./avatar');

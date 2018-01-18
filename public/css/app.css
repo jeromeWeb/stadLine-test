@@ -1757,17 +1757,102 @@ small,
   opacity: 1;
 }
 
-.avatar {
+.avatar,
+.avatarXl {
   display: block;
   width: 50px;
+  height: 50px;
   border-radius: 50%;
   vertical-align: middle;
   -webkit-box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
           box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
 }
 
+<<<<<<< HEAD
 .form-group {
   margin-bottom: 16px;
+=======
+.avatar1,
+.avatarXl {
+  background: url("/img/avatar1.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar2 {
+  background: url("/img/avatar2.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar3 {
+  background: url("/img/avatar3.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar4 {
+  background: url("/img/avatar4.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatar5 {
+  background: url("/img/avatar5.png") no-repeat center;
+  background-size: cover;
+}
+
+.avatarXl {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+.dealer-js {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.dealer-js p {
+  margin: 30px 0;
+  color: #949391;
+}
+
+.dealer-js p span {
+  text-transform: capitalize;
+  color: #292623;
+  line-height: 1.5;
+}
+
+.settings-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  width: 25px;
+}
+
+.settings-btn img {
+  width: 100%;
+  height: auto;
+}
+
+.settings-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  padding: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.settings-panel ul {
+  margin-top: 10px;
+}
+
+.settings-panel ul li {
+>>>>>>> 40773d5ddd94b017165ef5e7ace17f39fa0f2d07
   position: relative;
 }
 
@@ -1813,6 +1898,7 @@ small,
 }
 
 .bet .avatar,
+.bet .avatarXl,
 .bet p {
   display: inline-block;
 }
@@ -1826,7 +1912,8 @@ small,
   background: #ffffff;
 }
 
-.bet section .players .avatar {
+.bet section .players .avatar,
+.bet section .players .avatarXl {
   margin: 0 20px 0 0;
 }
 

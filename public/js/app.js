@@ -68,6 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
+<<<<<<< HEAD
 module.exports = __webpack_require__(8);
 
 
@@ -10930,46 +10931,84 @@ if ( true ) {
 	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
+=======
+module.exports = __webpack_require__(6);
 
-
-
-
-var
-
-	// Map over jQuery in case of overwrite
-	_jQuery = window.jQuery,
-
-	// Map over the $ in case of overwrite
-	_$ = window.$;
-
-jQuery.noConflict = function( deep ) {
-	if ( window.$ === jQuery ) {
-		window.$ = _$;
-	}
-
-	if ( deep && window.jQuery === jQuery ) {
-		window.jQuery = _jQuery;
-	}
-
-	return jQuery;
-};
-
-// Expose jQuery and $ identifiers, even in AMD
-// (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
-// and CommonJS for browser emulators (#13566)
-if ( !noGlobal ) {
-	window.jQuery = window.$ = jQuery;
-}
-
-
-
-
-return jQuery;
-} );
-
+>>>>>>> 40773d5ddd94b017165ef5e7ace17f39fa0f2d07
 
 /***/ }),
-/* 5 */
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//
+// /**
+//  * First we will load all of this project's JavaScript dependencies which
+//  * includes Vue and other libraries. It is a great starting point when
+//  * building robust, powerful web applications using Vue and Laravel.
+//  */
+//
+// require('./bootstrap');
+//
+// window.Vue = require('vue');
+//
+// /**
+//  * Next, we will create a fresh Vue application instance and attach it to
+//  * the page. Then, you may begin adding components to this application
+//  * or customize the JavaScript scaffolding to fit your unique needs.
+//  */
+//
+// Vue.component('example', require('./components/Example.vue'));
+//
+// const app = new Vue({
+//     el: '#app'
+// });
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+// require('./hello');
+__webpack_require__(2);
+__webpack_require__(3);
+__webpack_require__(4);
+__webpack_require__(5);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// npm run watch
+
+$(function () {
+
+  $(document).on('change', '#just-me', function () {
+    loadHistoric('justMe', $(this).is(':checked'));
+  });
+
+  $(document).on('change', '.js-sort-games', function () {
+    loadHistoric('sorter', $(this).val());
+  });
+});
+
+function loadHistoric(changed_type, changed_value) {
+  $.ajax({
+    url: baseUrl + '/historic/load',
+    type: 'POST',
+    data: {
+      page: changed_type == 'page' ? changed_value : $('#games-pool').find('data').data('page'),
+      justMe: changed_type == 'justMe' ? changed_value : $('#just-me').is(':checked'),
+      sorter: changed_type == 'sorter' ? changed_value : $('.js-sort-games').val()
+    },
+    success: function success(response) {
+      $('#games-pool').html(response);
+    }
+  });
+}
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports) {
 
 var $win = $(window),
@@ -10984,7 +11023,7 @@ var $win = $(window),
 diag = w * w + h * h;
 diag = Math.sqrt(diag), wBtn = startBtn.width(), hBtn = startBtn.height();
 
-// Click on start button make the player chose screen appears
+// Click on start button make the player chose screen appears with transition on elements
 
 startBtn.on('click', function () {
     $this = $(this);
@@ -11035,9 +11074,10 @@ backHome.on('click', function () {
 });
 
 /***/ }),
-/* 6 */
+/* 4 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 $(document).on('click', ".info-click-js", function () {
   $('.info-dealer').toggle(300);
   setTimeout(function () {
@@ -11063,9 +11103,120 @@ $(document).on('click', ".showScore", function () {
   $('.score-js').slideToggle(300);
   $('.inputBetResult-js').slideUp(300);
 });
+=======
+$(document).on('click', '.js-start-game', function () {
+  var players = [];
+  $('#player-inputs').find('li').children('input').each(function () {
+    if ($(this).val() && $(this).val() != "") {
+      players.push($(this).val());
+    }
+  });
+
+  if (players.length < 3) {
+    $('.error-players').html("Veuillez entrer au moins trois noms");
+  } else {
+    $.ajax({
+      url: window.location.origin + '/game/create',
+      type: 'POST',
+      data: {
+        players: JSON.stringify(players)
+      },
+      success: function success(response) {
+        $('#main-section').html(response);
+      }
+    });
+  }
+});
+
+$(document).on('click', ".showGame", function () {
+  newTurn();
+});
+
+$(document).on('click', ".showResult", function () {
+  fillBet();
+});
+
+$(document).on('click', ".showScore", function () {});
+
+function showGame() {
+  $('.inputBet-js').slideDown(300);
+  $('.dealer-js').slideUp(300);
+}
+
+function showResult() {
+  $('.inputBet-js').slideUp(300, function () {
+    $('body').scrollTop(0);
+    $('.inputBetResult-js').slideDown(300);
+  });
+}
+
+function showScore() {
+  $('.inputBetResult-js').slideUp(300, function () {
+    $('body').scrollTop(0);
+    $('.score-js').slideDown(300);
+  });
+}
+
+function newTurn() {
+  $.ajax({
+    url: window.location.origin + '/game/newTurn',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id')
+    },
+    success: function success(response) {
+      $('#bet-field').html(response);
+      showGame();
+    }
+  });
+}
+
+function fillBet() {
+  var bets = {};
+  $('#bet-inputs').children('.players').each(function () {
+    var input = $(this).find('input');
+    bets[input.data('id')] = input.val();
+  });
+  $.ajax({
+    url: window.location.origin + '/game/fillBets',
+    type: 'POST',
+    data: {
+      game_id: $('#playing-game').data('game-id'),
+      bets: bets
+    },
+    success: function success(response) {
+      $('#result-field').html(response);
+      showResult();
+    }
+  });
+}
+
+function nextTurn() {
+  showResult();
+}
 
 /***/ }),
-/* 8 */
+/* 5 */
+/***/ (function(module, exports) {
+
+var avatarBet = $('[data-stape="bet"] .players'),
+    avatarResult = $('[data-stape="result"] .players'),
+    avatarScore = $('[data-stape="score"] .players'),
+    avatarScoreParty = $('[data-stape="scoreParty"] .players'),
+    avatarDealer = $('.dealer-js');
+tabs = [avatarBet, avatarResult, avatarScore, avatarScoreParty];
+
+for (tab in tabs) {
+	for (var i = 1; i <= tabs[tab].length; i++) {
+		tabs[tab].eq('' + (i - 1)).find('.avatar').addClass('avatar' + i);
+	}
+}
+
+$('.dealer-js').find('.avatar').addClass('avatarXl').removeClass('avatar');
+>>>>>>> 40773d5ddd94b017165ef5e7ace17f39fa0f2d07
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
