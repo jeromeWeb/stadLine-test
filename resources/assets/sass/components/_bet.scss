@@ -1,18 +1,8 @@
 .bet {
 	header, section {
-		margin: 15px 0;
+		margin: 30px 0 0;
 	}
 	header {
-		text-align: center;
-		h2 {
-			font-size: 22px;
-			color: #242320;
-			font-weight: lighter;
-		}
-		p {
-			font-size: 16px;
-			color: #ffffff;
-		}
 		h2, p {
 			margin: 0;
 		}
@@ -26,16 +16,20 @@
 		.players {
 			padding: 10px 15px;
 			background: #ffffff;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			border-bottom: 1px solid #efe3d8;
+			// display: flex;
+			// justify-content: space-between;
+			// align-items: center;
+			// border-bottom: 1px solid #efe3d8;
 			.avatar {
 				margin: 0 20px 0 0;
 			}
-			label, input {
-				color: $text-color;
+
+			label {
+				display: block;
 			}
+			// label, input {
+			// 	color: $text-color;
+			// }
 			input {
 				border: 1px solid #efe3d8;
 				font-family: $workSans;
@@ -48,15 +42,24 @@
 				color: $text-color;
 			}
 			.bet-result {
-				display: flex;
-				border: 1px solid #efe3d8;
+				// display: flex;
+				// border: 1px solid #efe3d8;
 				border-radius: 3px;
+				color: $mid-grey;
+
+				label {
+					font-size: $size-small;
+					margin-right: 10px;
+					margin-bottom: 5px;
+				}
 				input{
 					margin: 0;
-					border: none;
-				&:first-of-type {
-					border-right: 1px solid #efe3d8;
-					}
+					// border: none;
+					width: 60px;
+
+				// &:first-of-type {
+				// 	border-right: 1px solid #efe3d8;
+				// 	}
 				}
 			}
 		}
@@ -66,6 +69,8 @@
 	}
 	.bet-btn {
 		padding: 0;
+		margin-top: $gutter * 2;
+
 		button {
 			display: block;
 			width: 100%;

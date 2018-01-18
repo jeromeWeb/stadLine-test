@@ -20,4 +20,8 @@ Route::get('/styleguide', function () {
     return view('styleguide');
 });
 
+Route::get('/bet', function () {
+    return view('pages.start-tour');
+});
+
 Route::get('/badgeTest', 'BadgesController@getTestPage');
