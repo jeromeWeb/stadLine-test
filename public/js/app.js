@@ -100,7 +100,11 @@ module.exports = __webpack_require__(6);
 
 // require('./hello');
 __webpack_require__(2);
+<<<<<<< HEAD
 __webpack_require__(3);
+=======
+__webpack_require__(4);
+>>>>>>> frontGeneral
 __webpack_require__(5);
 
 /***/ }),
@@ -10982,7 +10986,7 @@ var $win = $(window),
 diag = w * w + h * h;
 diag = Math.sqrt(diag), wBtn = startBtn.width(), hBtn = startBtn.height();
 
-// console.log(Math.pow(2, w))
+// Click on start button make the player chose screen appears
 
 startBtn.on('click', function () {
     $this = $(this);
@@ -10990,10 +10994,11 @@ startBtn.on('click', function () {
     $this.animate({
         height: diag,
         width: diag,
-        opacity: 0
+        opacity: 0,
+        borderRadius: 1000
     }, 300);
 
-    $this.find('span').add('.title').removeClass('moved');
+    $this.find('span').add('.title').add('.logo').add('.subtitle').removeClass('moved');
 
     // $('.js-home').animate({
     //     opacity: 0
@@ -11004,19 +11009,21 @@ startBtn.on('click', function () {
 
     setTimeout(function () {
         home.hide();
-        chosePlyrs.find('h2, ul').removeClass('moved');
+        chosePlyrs.find('h2, ul, > div').removeClass('moved');
         backHome.show().removeClass('opaq');
     }, 300);
 });
 
+// Click on back button go back to home
 backHome.on('click', function () {
     startBtn.animate({
         height: hBtn,
         width: wBtn,
-        opacity: 1
+        opacity: 1,
+        borderRadius: 50
     }, 300);
 
-    startBtn.find('span').add('.title').addClass('moved');
+    startBtn.find('span').add('.title').add('.logo').add('.subtitle').addClass('moved');
 
     backHome.addClass('opaq');
     home.removeClass('hidden-page');
@@ -11024,9 +11031,28 @@ backHome.on('click', function () {
     home.show();
 
     setTimeout(function () {
-        chosePlyrs.find('h2, ul').addClass('moved');
+        chosePlyrs.find('h2, ul, > div').addClass('moved');
         backHome.show();
     }, 300);
+});
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+$(document).on('click', ".showGame", function () {
+  $('.inputBet-js').slideToggle(300);
+  $('.dealer-js').slideUp(300);
+});
+
+$(document).on('click', ".showResult", function () {
+  $('.inputBetResult-js').slideToggle(300);
+  $('.inputBet-js').slideUp(300);
+});
+
+$(document).on('click', ".showScore", function () {
+  $('.score-js').slideToggle(300);
+  $('.inputBetResult-js').slideUp(300);
 });
 
 /***/ }),

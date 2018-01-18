@@ -1,0 +1,85 @@
+.bet {
+	header, section {
+		margin: 30px 0 0;
+	}
+	header {
+		h2, p {
+			margin: 0;
+		}
+	}
+
+	.avatar, p {
+		display: inline-block;
+	}
+	section {
+		padding: 0;
+		.players {
+			padding: 10px 15px;
+			background: #ffffff;
+			// display: flex;
+			// justify-content: space-between;
+			// align-items: center;
+			// border-bottom: 1px solid #efe3d8;
+			.avatar {
+				margin: 0 20px 0 0;
+			}
+
+			label {
+				display: block;
+			}
+			// label, input {
+			// 	color: $text-color;
+			// }
+			input {
+				border: 1px solid #efe3d8;
+				font-family: $workSans;
+				border-radius: 3px;
+				width: 50px;
+				padding: 5px 10px;
+				margin: 0 0 0 20px;
+				text-align: center;
+				-moz-appearance: textfield;
+				color: $text-color;
+			}
+			.bet-result {
+				// display: flex;
+				// border: 1px solid #efe3d8;
+				border-radius: 3px;
+				color: $mid-grey;
+
+				label {
+					font-size: $size-small;
+					margin-right: 10px;
+					margin-bottom: 5px;
+				}
+				input{
+					margin: 0;
+					// border: none;
+					width: 60px;
+
+				// &:first-of-type {
+				// 	border-right: 1px solid #efe3d8;
+				// 	}
+				}
+			}
+		}
+		.players:first-child {
+			border-radius: 3px 3px 0 0!important;
+		};
+	}
+	.bet-btn {
+		padding: 0;
+		margin-top: $gutter * 2;
+
+		button {
+			display: block;
+			width: 100%;
+			border-radius: 5px;
+			border: none;
+			padding: 10px;
+			margin: 20px auto;
+			background: #ff360b;
+			color: #ffffff;
+		}
+	}
+}

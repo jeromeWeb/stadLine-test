@@ -2,6 +2,72 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
+.btn {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  border-radius: $btn-border-radius;
+  font-size: $size-h3;
+  text-align: center;
+  width: $btn-width;
+  padding: $btn-padding;
+
+  @include on-event {
+    text-decoration: none!important;
+  }
+}
+
+.center-buttons {
+  .btn {
+
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+
 .btn-principal-1 {
-  
+    background-color: $brand-color;
+    border: 1px solid $brand-color;
+    color: $white;
+    transition: background $anim-base, color $anim-base;
+
+    @include on-event {
+        background: $white;
+        color: $brand-color;
+    }
+
+}
+
+.btn-principal-2 {
+
+}
+
+.btn-secondaire-1 {
+  background-color: $light-grey;
+  color: $white;
+
+  @include on-event {
+    background-color: $brand-color;
+    transition: background-color $anim-base;
+    color: $white;
+  }
+
+}
+
+.btn-secondaire-2 {
+
+}
+
+.back-home {
+    color: $brand-color;
+    position: absolute;
+    top: $gutter;
+    right: $gutter;
+    display: none;
+    transition: opacity $anim-base;
+
+    &.opaq {
+        opacity: 0;
+    }
 }
