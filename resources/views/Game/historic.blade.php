@@ -1,4 +1,4 @@
-{{-- A inclure dans le layout global --}}
+@extends('welcome')
 <div class="historic">
   <div id="historic-filters">
     <input class="js-filter-user" type="text" name="" value="">

@@ -2,8 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Round;
+use DB;
 
 class Game extends Model
 {
@@ -14,4 +16,8 @@ class Game extends Model
     {
         return $this->hasMany(Round::class, 'round_id');
     }
+
+  public function getPlayers(){
+    return User::whereIn('id', DB::table('game_users')->where('game_id', $this->id)->pluck('user_id'))->get();
+  }
 }
