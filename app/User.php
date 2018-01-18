@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Badge;
 
 class User extends Authenticatable
 {
@@ -40,5 +41,8 @@ class User extends Authenticatable
     // Retrouver les tours joués par l'utilisateur
     public function rounds() {
         return hasMany('App\Round');
+  
+    public function badges(){
+      return $this->hasMany(Badge::class);
     }
 }
