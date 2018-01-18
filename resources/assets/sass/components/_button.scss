@@ -3,13 +3,17 @@
 // -----------------------------------------------------------------------------
 
 .btn {
-  display: block;
+  display: inline-block;
   border: 0;
   border-radius: $btn-border-radius;
   font-size: $size-h3;
   text-align: center;
   width: $btn-width;
   padding: $btn-padding;
+
+  @include on-event {
+    text-decoration: none;
+  }
 }
 
 .center-buttons {
@@ -31,16 +35,30 @@
 }
 
 .btn-secondaire-1 {
-  background-color: $mid-grey;
+  background-color: $light-grey;
   color: $white;
 
   @include on-event {
     background-color: $brand-color;
     transition: background-color $anim-base;
+    color: $white;
   }
 
 }
 
 .btn-secondaire-2 {
 
+}
+
+.back-home {
+    color: $brand-color;
+    position: absolute;
+    top: $gutter;
+    right: $gutter;
+    display: none;
+    transition: opacity $anim-base;
+
+    &.opaq {
+        opacity: 0;
+    }
 }

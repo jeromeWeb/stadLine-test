@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(5);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
@@ -100,6 +100,7 @@ module.exports = __webpack_require__(5);
 
 __webpack_require__(2);
 __webpack_require__(4);
+__webpack_require__(5);
 
 /***/ }),
 /* 2 */
@@ -10997,6 +10998,15 @@ backHome.on('click', function () {
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+$(document).on('click', ".showGame", function () {
+  $('.inputBet-js').slideToggle(300);
+  $('.dealer-js').slideUp(300);
+});
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

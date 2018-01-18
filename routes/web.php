@@ -21,3 +21,8 @@ Route::get('/styleguide', function () {
 });
 
 Route::get('/badgeTest', 'BadgesController@getTestPage');
+
+//Start game
+Route::get('/start-tour', function () {
+    return view('pages.start-tour');
+})->name('start-tour');

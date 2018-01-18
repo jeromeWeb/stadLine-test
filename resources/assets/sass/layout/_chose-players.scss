@@ -22,16 +22,3 @@
         }
     }
 }
-
-.back-home {
-    color: $brand-color;
-    position: absolute;
-    top: $gutter;
-    right: $gutter;
-    display: none;
-    transition: opacity $anim-base;
-
-    &.opaq {
-        opacity: 0;
-    }
-}

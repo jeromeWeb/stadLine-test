@@ -1509,6 +1509,44 @@ small,
   margin-bottom: 15px;
 }
 
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 25px;
+  font-size: 21px;
+  text-align: center;
+  width: 250px;
+  padding: 12px;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  text-decoration: none;
+}
+
+.center-buttons .btn {
+  display: inline-block;
+}
+
+.center-buttons .btn:first-child {
+  margin-right: 20px;
+}
+
+.btn-secondaire-1 {
+  background-color: #C9C8C7;
+  color: #fff;
+}
+
+.btn-secondaire-1:hover,
+.btn-secondaire-1:active,
+.btn-secondaire-1:focus {
+  background-color: #f18832;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+  color: #fff;
+}
+
 .back-home {
   color: #f18832;
   position: absolute;
@@ -1521,37 +1559,6 @@ small,
 
 .back-home.opaq {
   opacity: 0;
-}
-
-.btn {
-  display: block;
-  border: 0;
-  border-radius: 25px;
-  font-size: 21px;
-  text-align: center;
-  width: 250px;
-  padding: 12px;
-}
-
-.center-buttons .btn {
-  display: inline-block;
-}
-
-.center-buttons .btn:first-child {
-  margin-right: 20px;
-}
-
-.btn-secondaire-1 {
-  background-color: #949391;
-  color: #fff;
-}
-
-.btn-secondaire-1:hover,
-.btn-secondaire-1:active,
-.btn-secondaire-1:focus {
-  background-color: #f18832;
-  -webkit-transition: background-color 0.2s ease-in;
-  transition: background-color 0.2s ease-in;
 }
 
 .btn-play {
@@ -1603,10 +1610,6 @@ small,
   vertical-align: middle;
   -webkit-box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
           box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
-}
-
-body {
-  background: #d5cfcd;
 }
 
 .bet header,
