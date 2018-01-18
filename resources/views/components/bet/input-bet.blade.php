@@ -17,7 +17,7 @@
 			<p class="txt-brand"><span class="fw-bold">{{$player->getScore($game)}}</span> point</p>
 		</div>
 		<div class="pull-right">
-			<input required id="player{{$i}}" data-id={{$player->id}} type="number" name="{{$player->pseudo}}" placeholder="pari">
+			<input required id="player{{$i}}" data-id={{$player->id}} type="number" name="{{$player->pseudo}}" min="0">
 		</div>
 	</div>
 	@php $i++; @endphp

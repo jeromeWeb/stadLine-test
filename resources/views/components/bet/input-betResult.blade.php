@@ -5,13 +5,12 @@
 		<p class="h3">Tour {{$round->nb_round}} - {{$round->nb_card}} Cartes</p>
 	</header>
 </div>
-<section data-stape="result" class="col-xs-12 col-sm-6 col-sm-push-3 bet-result" id="bet-inputs">
-
+<section data-stape="result" class="col-xs-12 col-sm-6 col-sm-push-3" id="bet-inputs">
 @php $i = 1; @endphp
 @foreach($game->players->pluck('user') as $player)
 	<div class="players clearfix">
 		<div class="pull-left">
-			@include('components/avatar', [$j => $j])
+			@include('components/avatar')
 		</div>
 		<div class="pull-left">
 			<label for="player{{$i}}">{{$player->pseudo}}</label>
