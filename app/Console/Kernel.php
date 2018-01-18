@@ -40,11 +40,15 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function(){
 
-            $text = 'test bou test';
+            $title = 'Semaine du '.date("Y-m-d", time()-7*24*3600).' au '.date("Y-m-d", time()-3*24*3600).' | Stadline | Le Motton';
+
+            $text = 'Bravo à :';
+
             $emails = array('sandradelaporte@gmail.com', 'remi@gmail.com');
 
+
             foreach ($emails as $email) {
-                $test = Mail::send('email.newsletter', ['email' => $email, 'emailText' => $text], function($message)
+                $test = Mail::send('email.newsletter', ['email' => $email, 'title' => $title], function($message)
                 {
                     $message->from('motton@motton.com', 'Motton');
                     $message->to('sandradelaporte@gmail.com', 'Motton')->subject('Motton');
