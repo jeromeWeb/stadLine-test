@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -100,12 +100,9 @@ module.exports = __webpack_require__(6);
 
 // require('./hello');
 __webpack_require__(2);
-<<<<<<< HEAD
 __webpack_require__(3);
-=======
-__webpack_require__(4);
->>>>>>> frontGeneral
 __webpack_require__(5);
+__webpack_require__(6);
 
 /***/ }),
 /* 2 */
@@ -11040,23 +11037,33 @@ backHome.on('click', function () {
 /* 6 */
 /***/ (function(module, exports) {
 
+// Gestion du tour, boutons suivant
+
+// $(document).on('click',".nextStepTour",function(){
+//   $('body').scrollTop(0)
+// } )
+
 $(document).on('click', ".showGame", function () {
-  $('.inputBet-js').slideToggle(300);
-  $('.dealer-js').slideUp(300);
+    $('.inputBet-js').slideDown(300);
+    $('.dealer-js').slideUp(300);
 });
 
 $(document).on('click', ".showResult", function () {
-  $('.inputBetResult-js').slideToggle(300);
-  $('.inputBet-js').slideUp(300);
+    $('.inputBet-js').slideUp(300, function () {
+        $('body').scrollTop(0);
+        $('.inputBetResult-js').slideDown(300);
+    });
 });
 
 $(document).on('click', ".showScore", function () {
-  $('.score-js').slideToggle(300);
-  $('.inputBetResult-js').slideUp(300);
+    $('.inputBetResult-js').slideUp(300, function () {
+        $('body').scrollTop(0);
+        $('.score-js').slideDown(300);
+    });
 });
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

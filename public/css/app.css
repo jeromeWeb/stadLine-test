@@ -1224,8 +1224,6 @@ small,
   font-size: 12px;
 }
 
-<<<<<<< HEAD
-=======
 .txt-brand {
   color: #f18832;
 }
@@ -1258,7 +1256,6 @@ small,
   font-weight: 600;
 }
 
->>>>>>> frontGeneral
 /**
  * Clear inner floats
  */
@@ -1626,13 +1623,16 @@ small,
 .btn-play {
   padding: 15px;
   width: 250px;
+  margin: 60px auto 0;
   text-align: center;
   background-color: #f18832;
   color: #fff;
+  font-weight: 600;
+  font-size: 28px;
   z-index: 5;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   border-radius: 50px;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1691,7 +1691,7 @@ small,
 }
 
 .bet section {
-  padding: 0;
+  padding: 0 0 60px;
 }
 
 .bet section .players {
@@ -1780,16 +1780,12 @@ small,
   opacity: 0;
 }
 
-<<<<<<< HEAD
-=======
 .logo {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 100px;
   height: auto;
   background: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   padding: 5px;
   -webkit-transform: translate(0, -40px);
           transform: translate(0, -40px);
@@ -1802,4 +1798,3 @@ small,
   opacity: 1;
 }
 
->>>>>>> frontGeneral

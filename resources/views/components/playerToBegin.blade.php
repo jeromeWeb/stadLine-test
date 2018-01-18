@@ -7,5 +7,5 @@
 </div>
 
 <div class="padding-gutter text-center">
-  @include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Commencer le tour', 'classJS'=>'showGame'])
+  @include('switch-library.btn-library', ['target'=>'btn-principal-1', 'message'=>'Commencer le tour', 'classJS'=>'showGame nextStepTour'])
 </div>

@@ -1,14 +1,24 @@
+// Gestion du tour, boutons suivant
+
+// $(document).on('click',".nextStepTour",function(){
+//   $('body').scrollTop(0)
+// } )
+
 $(document).on('click',".showGame",function(){
-  $('.inputBet-js').slideToggle(300);
-  $('.dealer-js').slideUp(300)
+    $('.inputBet-js').slideDown(300);
+    $('.dealer-js').slideUp(300);
 } )
 
 $(document).on('click',".showResult",function(){
-  $('.inputBetResult-js').slideToggle(300);
-  $('.inputBet-js').slideUp(300)
+  $('.inputBet-js').slideUp(300, function() {
+      $('body').scrollTop(0)
+      $('.inputBetResult-js').slideDown(300);
+  })
 } )
 
 $(document).on('click',".showScore",function(){
-  $('.score-js').slideToggle(300);
-  $('.inputBetResult-js').slideUp(300)
+  $('.inputBetResult-js').slideUp(300, function() {
+      $('body').scrollTop(0)
+      $('.score-js').slideDown(300);
+  })
 } )
