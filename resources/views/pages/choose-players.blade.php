@@ -10,7 +10,6 @@
 @php
     $j = 1;
 @endphp
-<img src="" alt="">
 
 @for ($i=0; $i < 5; $i++)
   <div class="container">
