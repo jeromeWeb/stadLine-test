@@ -5,11 +5,11 @@ const avatarBet = $('[data-stape="bet"] .players'),
 	avatarDealer = $('.dealer-js')
 	tabs = [avatarBet, avatarResult, avatarScore, avatarScoreParty];
 
-for ( tab in tabs ) {
+for ( var i=0; i < tabs.length; i++ ) {
 	for ( let i = 1; i <= tabs[tab].length; i++ ) {
-		tabs[tab].eq(`${i-1}`).find('.avatar').addClass(`avatar${i}`);
-	}
-}
+		tabs[tab].eq(''+ i-1 +'').find('.avatar').addClass('avatar'+i+'');
+	};
+};
 
 $('.dealer-js')
 	.find('.avatar')

@@ -456,11 +456,11 @@ var avatarBet = $('[data-stape="bet"] .players'),
     avatarDealer = $('.dealer-js');
 tabs = [avatarBet, avatarResult, avatarScore, avatarScoreParty];
 
-for (tab in tabs) {
-	for (var i = 1; i <= tabs[tab].length; i++) {
-		tabs[tab].eq('' + (i - 1)).find('.avatar').addClass('avatar' + i);
-	}
-}
+for (var i = 0; i < tabs.length; i++) {
+	for (var _i = 1; _i <= tabs[tab].length; _i++) {
+		tabs[tab].eq('' + _i - 1 + '').find('.avatar').addClass('avatar' + _i + '');
+	};
+};
 
 $('.dealer-js').find('.avatar').addClass('avatarXl').removeClass('avatar');
 
