@@ -12,6 +12,10 @@ class Game extends Model
 
   public function rounds()
     {
-        return $this->hasMany(Round::class, 'round_id');
+        return $this->hasMany(Round::class);
     }
+
+  public function statsDetails() {
+  	return $this->hasMany(UserStatsDetails::class)
+  }
 }
