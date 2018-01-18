@@ -29,6 +29,4 @@ class GamesController extends Controller
                 ->with('page', $page);
     }
 
-    
-
 }
