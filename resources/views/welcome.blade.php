@@ -8,7 +8,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,900" rel="stylesheet">
 
         <!-- Styles -->
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
