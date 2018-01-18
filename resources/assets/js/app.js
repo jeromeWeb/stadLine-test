@@ -21,9 +21,16 @@
 //     el: '#app'
 // });
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 // require('./hello');
-require('./historic.js');
+require('./historic');
 require('./jquery-ui');
 require('./home');
 require('./start-tour');
 require('./google');
+require('./game');

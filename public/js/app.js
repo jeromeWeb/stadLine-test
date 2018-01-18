@@ -98,12 +98,19 @@ module.exports = __webpack_require__(6);
 //     el: '#app'
 // });
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 // require('./hello');
 __webpack_require__(11);
 __webpack_require__(2);
 __webpack_require__(4);
 __webpack_require__(12);
 __webpack_require__(5);
+__webpack_require__(13);
 
 /***/ }),
 /* 2 */
@@ -11011,11 +11018,11 @@ backHome.on('click', function () {
 $("#logout").on("click", function () {
   console.log(gapi.auth2.getAuthInstance().isSignedIn.Ab);
   gapi.auth2.getAuthInstance().disconnect();
+  $('#image').attr("src", "");
 });
 
 console.log("plop");
 function isConnect() {
-  gapi.load("client:auth2", initAuth);
   console.log(gapi.auth2.getAuthInstance().isSignedIn.Ab);
   var isCo = gapi.auth2.getAuthInstance().isSignedIn.Ab;
   return isCo;
@@ -11084,6 +11091,37 @@ $(document).on('click', ".showResult", function () {
 $(document).on('click', ".showScore", function () {
   $('.score-js').slideToggle(300);
   $('.inputBetResult-js').slideUp(300);
+});
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+$(function () {
+
+  $(document).on('click', '.js-start-game', function () {
+    var players = [];
+    $('#player-inputs').find('li').children('input').each(function () {
+      if ($(this).val() && $(this).val() != "") {
+        players.push($(this).val());
+      }
+    });
+
+    if (players.length < 3) {
+      $('.error-players').html("Veuillez entrer au moins trois noms");
+    } else {
+      $.ajax({
+        url: window.location.origin + '/game/create',
+        type: 'POST',
+        data: {
+          players: JSON.stringify(players)
+        },
+        success: function success(response) {
+          $('#player-inputs').html(response);
+        }
+      });
+    }
+  });
 });
 
 /***/ })

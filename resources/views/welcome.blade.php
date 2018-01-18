@@ -7,8 +7,8 @@
         <meta name="google-signin-scope" content="profile email">
         <meta name="google-signin-client_id" content="996656444072-6irn35okejaesihhtgoi8hnv1d30i8et.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-        <title>Laravel</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <title>Motton</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,900" rel="stylesheet">
