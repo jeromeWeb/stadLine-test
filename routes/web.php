@@ -15,11 +15,17 @@ Route::get('/', function () {
     return view('pages.accueil');
 });
 
-
 Route::get('/styleguide', function () {
     return view('styleguide');
 });
 
+//Historic
+Route::group(['prefix' => 'historic'], function () {
+  Route::get('/getPage','GamesController@getHistoricPage');
+  Route::post('/load', 'GamesController@loadHistoric');
+});
+
+//Temp static pages
 Route::get('/choose-players', function () {
     return view('pages.choose-players');
 })->name('choose-players');
