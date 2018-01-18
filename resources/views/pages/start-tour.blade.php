@@ -6,6 +6,8 @@
 {{ __('Motton') }}
 @endsection
 
+@include('components.settings')
+
 <div class="dealer-js">
   @include('components.playerToBegin', ['dealer'=>'manu'])
 </div>

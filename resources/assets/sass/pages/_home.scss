@@ -24,14 +24,19 @@
 }
 
 .logo {
-    margin-top: 60px;
+    margin: 60px auto 0;
     width: 100px;
-    height: auto;
+    display: block;
     background: $white;
     border-radius: 5px;
     padding: 5px;
     transform: translate(0, -40px);
     opacity: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 
     &.moved {
         transform: translate(0, 0);

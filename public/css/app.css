@@ -1256,6 +1256,10 @@ small,
   font-weight: 600;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 /**
  * Clear inner floats
  */
@@ -1451,7 +1455,7 @@ small,
 
 .sidebar {
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
@@ -1506,6 +1510,15 @@ small,
 
 .sidebar nav a {
   color: #fff;
+  display: block;
+  padding: 30px 0;
+  font-size: 21px;
+  font-weight: 500;
+  position: relative;
+}
+
+.sidebar nav li:first-child a {
+  border-bottom: 1px solid #fff;
 }
 
 .wrap-home,
@@ -1638,7 +1651,6 @@ small,
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  top: 60%;
 }
 
 .btn-play:hover,
@@ -1673,6 +1685,112 @@ small,
   vertical-align: middle;
   -webkit-box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
           box-shadow: 0 3px 4px rgba(128, 128, 128, 0.2);
+}
+
+.settings-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  width: 25px;
+}
+
+.settings-btn img {
+  width: 100%;
+  height: auto;
+}
+
+.settings-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  padding: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.settings-panel ul {
+  margin-top: 10px;
+}
+
+.settings-panel ul li {
+  position: relative;
+}
+
+.settings-panel ul li a {
+  padding: 20px 0 20px 30px;
+  display: block;
+  font-weight: 500;
+  color: #292623;
+}
+
+.settings-panel ul li a img {
+  width: 22px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.settings-panel ul li a:hover,
+.settings-panel ul li a:active,
+.settings-panel ul li a:focus {
+  color: #f18832;
+  text-decoration: none;
+}
+
+.settings-panel ul li:first-child:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90%;
+  height: 1px;
+  background: #949391;
+}
+
+.wrap-settings {
+  padding: 15px;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+}
+
+.close-settings {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.close-settings:after,
+.close-settings:before {
+  display: block;
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: #f18832;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.close-settings:after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-settings:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .bet header,
@@ -1781,15 +1899,20 @@ small,
 }
 
 .logo {
-  margin-top: 60px;
+  margin: 60px auto 0;
   width: 100px;
-  height: auto;
+  display: block;
   background: #fff;
   border-radius: 5px;
   padding: 5px;
   -webkit-transform: translate(0, -40px);
           transform: translate(0, -40px);
   opacity: 0;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
 }
 
 .logo.moved {
