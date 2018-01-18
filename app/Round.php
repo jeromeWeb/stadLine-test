@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rounds extends Model
+class Round extends Model
 {
 
 	public $table = 'rounds';

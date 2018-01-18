@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -100,12 +100,9 @@ module.exports = __webpack_require__(6);
 
 // require('./hello');
 __webpack_require__(2);
-<<<<<<< HEAD
 __webpack_require__(3);
-=======
-__webpack_require__(4);
->>>>>>> frontGeneral
 __webpack_require__(5);
+__webpack_require__(6);
 
 /***/ }),
 /* 2 */
@@ -11056,7 +11053,7 @@ $(document).on('click', ".showScore", function () {
 });
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
