@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.accueil');
+});
+
+
+Route::get('/styleguide', function () {
+    return view('styleguide');
 });
 
 Route::get('/badgeTest', 'BadgesController@getTestPage');

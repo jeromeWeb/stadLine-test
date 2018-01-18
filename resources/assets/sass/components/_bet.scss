@@ -1,0 +1,83 @@
+body {
+	background: #d5cfcd;
+}
+.bet {
+	header, section {
+		margin: 15px 0;
+	}
+	header {
+		text-align: center;
+		h2 {
+			font-size: 22px;
+			color: #242320;
+			font-weight: lighter;
+		}
+		p {
+			font-size: 16px;
+			color: #ffffff;
+		}
+		h2, p {
+			margin: 0;
+		}
+	}
+
+	.avatar, p {
+		display: inline-block;
+	}
+	section {
+		padding: 0;
+		.players {
+			padding: 10px 15px;
+			background: #ffffff;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid #efe3d8;
+			.avatar {
+				margin: 0 20px 0 0;
+			}
+			label, input {
+				color: $text-color;
+			}
+			input {
+				border: 1px solid #efe3d8;
+				font-family: $workSans;
+				border-radius: 3px;
+				width: 50px;
+				padding: 5px 10px;
+				margin: 0 0 0 20px;
+				text-align: center;
+				-moz-appearance: textfield;
+				color: $text-color;
+			}
+			.bet-result {
+				display: flex;
+				border: 1px solid #efe3d8;
+				border-radius: 3px;
+				input{
+					margin: 0;
+					border: none;
+				&:first-of-type {
+					border-right: 1px solid #efe3d8;
+					}
+				}
+			}
+		}
+		.players:first-child {
+			border-radius: 3px 3px 0 0!important;
+		};
+	}
+	.bet-btn {
+		padding: 0;
+		button {
+			display: block;
+			width: 100%;
+			border-radius: 5px;
+			border: none;
+			padding: 10px;
+			margin: 20px auto;
+			background: #ff360b;
+			color: #ffffff;
+		}
+	}
+}
