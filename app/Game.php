@@ -13,11 +13,21 @@ class Game extends Model
   public $timestamps = true;
 
   public function rounds()
-    {
-        return $this->hasMany(Round::class, 'round_id');
-    }
-
-  public function getPlayers(){
-    return User::whereIn('id', DB::table('game_users')->where('game_id', $this->id)->pluck('user_id'))->get();
+  {
+      return $this->hasMany(Round::class, 'round_id');
   }
+
+
+  public function players(){
+    return $this->hasMany(Player::class, 'game_id');
+  }
+
+  public function countPlayers(){
+    return $this->players->count();
+  }
+
+  public function winners(){
+    return $this->players->where('winner', 1);
+  }
+
 }

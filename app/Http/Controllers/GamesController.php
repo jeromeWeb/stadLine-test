@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Game;
 
 class GamesController extends Controller
 {
     public function getHistoricPage(Request $request){
-      $games = null;//Manque le reste pour faire la requête...
+      $games = Game::where('is_over', 1)
+                      ->orderBy('updated_at')
+                      ->limit(25)
+                      ->get();
       return view('Game.historic')->with('games', $games);
     }
 
@@ -24,5 +28,7 @@ class GamesController extends Controller
                 ->with('games', $games)
                 ->with('page', $page);
     }
+
+    
 
 }
